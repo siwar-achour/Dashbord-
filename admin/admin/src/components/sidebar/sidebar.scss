@@ -1,0 +1,112 @@
+.sidebar{
+    flex: 1;
+    border-right: 0.5px solid lightgray;
+    min-height: 100vh;
+    background-color: #54595F;
+    .top{
+        
+        height: 50px;
+        display:flex;
+        align-items: center;
+        justify-content: center;
+        .logo{
+            font-size: 20px;
+            font-weight: bold;
+            color: #029fa0;
+            
+            .avatar{
+                width: 90px;
+                height: 40px;
+                
+                
+              }  
+        }
+    }
+   hr{
+   height: 0;
+   border: 0.5 solid lightgray;
+
+     }
+    .center{
+    padding-left: 10px;
+    
+        ul{
+        list-style: none;
+        padding: 0;
+        margin: 0;
+           
+        .title{
+            font-size: 15px;
+            font-weight: bold;
+            color: #999;
+            margin-top: 15px;
+            margin-bottom: 5px;
+        }
+        li{
+            display: flex;
+            align-items: center;
+            padding:  8px;
+            cursor: pointer;
+            
+
+            &:hover{
+                background-color: transparent;
+            }
+            .MoreIcon{
+              padding-left: 12px;
+            }
+            .icon {
+                font-size: 18px;
+                color: #7A7A7A;
+
+                cursor: pointer;
+
+
+              &:hover{
+                color: #fcb900 ;
+               }
+          
+            }
+            span{
+                font-size: 13px;
+                font-weight: 600;
+                color: rgb(195, 191, 191);
+               
+               
+            }
+            
+        }
+        .li .right-icon{
+            display: inline-flex;
+        }
+   
+          }
+         
+   
+    
+}
+.bottom {
+    display: flex;
+    margin: 10px ;
+    align-items: center;
+
+    .colorOption{
+        width: 20px;
+        height: 20px;
+        border-radius: 5px;
+        border: 1px solid #54595F;
+        cursor: pointer;
+
+        &:nth-child(1){
+            background-color: whitesmoke;
+        }
+        &:nth-child(2){
+            background-color: darken($color: #000000, $amount: 0);
+        }
+        
+       
+    }
+    
+}
+   
+}
