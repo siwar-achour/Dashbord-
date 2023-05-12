@@ -10,7 +10,10 @@ const Mapview = () => {
     <Sidebar/>
     <div className="listContainer">
       <Navbar/>
-      <Maps/>
+     
+      <Maps />
+    
+      
    </div>
    
   </div>
