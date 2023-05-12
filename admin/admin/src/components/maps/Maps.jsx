@@ -1,21 +1,43 @@
+import "mapbox-gl/dist/mapbox-gl.css"
+import Map, { FullscreenControl,GeolocateControl, Marker, NavigationControl } from "react-map-gl";
+import React, {useState} from 'react';
+import './redloc.jpg';
 
-import ReactMapGl from "react-map-gl";
-import {useState} from 'react';
+ function Maps() {
+  const [lng,setLng]=useState(9.400138);
+  const [lat,setLat]=useState(33.8439408);
 
-
-export default function Maps() {
-  const [viewport , setViewport]= useState({
-    latitude : 45.4211,
-    longitude:-75.6903,
-    with:'100vw',
-    height:'100vh',
-    zoom:10
-  });
   return (
-    <div>
-      <ReactMapGl {...viewport} mapboxApiAccessToken={process.env.REACT_APP_MAPBOX_TOKEN}>
-        markers here
-      </ReactMapGl>
-    </div>
-  )
+    
+      <Map 
+      mapboxAccessToken="pk.eyJ1Ijoic2l3YXI0NCIsImEiOiJjbGhrc2dleHAwajBwM2RzMXFmMHN3Z3dyIn0.DwGm2V9r12GMMozAntZXKQ"
+      style={{
+        width:"100%",
+        height: "700px",
+        borderRadius:"8px",
+        border:"2px solid transparent"}}
+      initialViewState={{
+        latitude : lat,
+        longitude:lng,
+      }}
+      mapStyle="mapbox://styles/mapbox/streets-v9"
+      >
+        <Marker
+         latitude = {lat}
+         longitude={lng}
+       
+      />
+        <button className="btn-marker">
+        <img src="/redloc.jpg" alt="" />
+      </button> 
+      <NavigationControl
+      position="bottom-right"
+      />
+     
+      <FullscreenControl/>
+      <GeolocateControl/>
+      </Map>
+   
+  );
 }
+export default Maps;
