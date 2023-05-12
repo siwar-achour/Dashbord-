@@ -21,10 +21,15 @@
     "@testing-library/react": "^13.4.0",
     "@testing-library/user-event": "^13.5.0",
     "@types/jest": "^29.5.1",
+    "axios": "^1.4.0",
+    "cors": "^2.8.5",
     "d3-shape": "^3.2.0",
+    "express": "^4.18.2",
     "google-map-react": "^2.2.0",
     "google-maps-react": "^2.0.6",
     "leaflet": "^1.9.3",
+    "mapbox-gl": "^2.14.1",
+    "mongoose": "^7.1.0",
     "react": "^18.2.0",
     "react-chartjs-2": "^5.2.0",
     "react-circular-progressbar": "^2.1.0",
@@ -34,6 +39,7 @@
     "react-icons": "^4.8.0",
     "react-is": "^18.2.0",
     "react-leaflet": "^4.2.1",
+    "react-map-gl": "^7.0.23",
     "react-router-dom": "^6.10.0",
     "react-scripts": "^5.0.1",
     "react-smooth": "^2.0.2",
@@ -70,5 +76,9 @@
   "devDependencies": {
     "webpack": "^5.79.0",
     "webpack-dev-server": "^4.13.3"
-  }
+  },
+  "description": "https://maps.googleapis.com/maps/api/js?v=3.exp&libraries=geometry,drawing,places # Getting Started with Create React App",
+  "main": "server.js",
+  "author": "Code",
+  "license": "ISC"
 }

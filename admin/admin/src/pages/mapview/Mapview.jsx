@@ -11,8 +11,8 @@ const Mapview = () => {
     <div className="listContainer">
       <Navbar/>
       <Maps/>
-    
-    </div>
+   </div>
+   
   </div>
   )
 }

@@ -12,11 +12,11 @@ const data = [
 
 ];
 
-const Chart = () => {
+const Chart = ({aspect , title}) => {
   return (
     <div className="Chart">
-      <div className="title">Last 7 Months (Revenue) </div>
-      <ResponsiveContainer width="100%" aspect={2 / 1}>
+      <div className="title">{title} </div>
+      <ResponsiveContainer width="100%" aspect={aspect} >
       <AreaChart width={730} height={250} data={data}
   margin={{ top: 10, right: 30, left: 0, bottom: 0 }}>
   <defs>
@@ -33,7 +33,7 @@ const Chart = () => {
   <Area type="monotone" dataKey="Total" stroke="#8884d8" fillOpacity={1} fill="url(#total)" />
  </AreaChart> 
  </ResponsiveContainer>
- <h1>Map</h1>
+
 
   </div>
   )

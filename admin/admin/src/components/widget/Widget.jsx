@@ -17,7 +17,11 @@ case "user":
     title:"USERS",
     isMoney:false,
     link:"See all users",
-    icon:<PersonIcon className='icon'  />,
+    icon:<PersonIcon className='icon' 
+    style={{
+        color:"crismon",
+        backgroundColor:"rgba(255,0,0,0.2)",
+    }} />,
     };
     break;
 
@@ -26,7 +30,13 @@ case "order":
         title:"ORDERS",
         isMoney:false,
         link:"See all orders",
-        icon:<ShoppingCartIcon className='icon'/>,
+        icon:<ShoppingCartIcon className='icon'
+        style={{
+            color:"goldenred",
+            backgroundColor:"rgba(218,165,32,0.2)",
+        }}
+        
+        />,
     };
     break;
 case "earning":
@@ -34,7 +44,11 @@ data = {
             title:"EARNINGS",
             isMoney:true,
             link:"View net earnings",
-            icon:<MonetizationOnIcon className='icon'/>,
+            icon:<MonetizationOnIcon className='icon'
+            style={{
+                color:"green",
+                backgroundColor:"rgba(0,128,0,0.2)",
+            }}/>,
         };
         break;
                 
@@ -43,7 +57,12 @@ data = {
                 title:"BALANCE",
                 isMoney:true,
                 link:"See details",
-                icon:<AccountBalanceWalletIcon className='icon'/>,
+                icon:<AccountBalanceWalletIcon className='icon'
+                style={{
+                    color:"purple",
+                    backgroundColor:"rgba(128,0,128,0.2)",
+                }}
+                />,
     };
 break;
 default:
