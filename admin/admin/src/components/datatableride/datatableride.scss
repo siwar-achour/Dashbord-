@@ -1,0 +1,96 @@
+.datatableride{
+    height: 600px;
+    padding: 20px;
+   .dataTablerideTitle{
+    width: 100%;
+    font-size: 24px;
+    color: gray;
+    margin-bottom: 10px;
+    display: flex;
+    align-items: center ;
+    justify-content: space-between;
+        .link{
+            text-decoration: none;
+            color: green;
+            font-size: 16px;
+            font-weight: 400;
+            border: 1px solid green;
+            padding: 5px;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+   } 
+    
+ .cellWithStatus{
+    display: flex;
+   align-items: center;
+   border-radius: 5px;
+   padding: 5px;
+        
+    &.active{
+     color: green ;
+     background-color: rgba(255,217,0,0.05);
+ 
+              }
+    &.passive{
+     color: #cf2e2e;
+     background-color: rgba(255,217,0,0.05);
+              }
+     
+     &.pending{
+         font-size: 14px;
+         color:goldenrod ;
+         background-color: rgb(255,217,0,0.05);
+            }
+    
+}
+
+.cellAction{
+    
+    height: 100px;
+    display: flex;
+   // gap: 85px;
+    padding-top:0px;
+   ul{
+    display: flex;
+    padding: 1px;
+    padding-left: 15px;
+    i{
+       padding: 26px;
+    }
+   }
+   
+    .viewButton{
+        padding: 0px 6px;
+        border-radius: 5px;
+        color:darkblue ;
+        border: 1px dotted rgba(0,0,139,0.596);
+        cursor: pointer;
+        
+    }
+    .updateButton{
+        padding: 0px 5px;
+        border-radius: 5px;
+        color:green ;
+        border: 1px dotted rgba(42, 108, 36, 0.629);
+        cursor: pointer;
+        
+    }
+    .deleteButton{
+        padding: 0px 5px;
+        border-radius: 6px;
+        color:crimson ;
+        border: 1px dotted rgba(220,20,60,0.6);
+        cursor: pointer;
+
+        
+    }
+}
+   
+ 
+
+
+
+
+  }
+ 
