@@ -1,0 +1,35 @@
+
+.fileItem{
+
+    li{
+          list-style: none;
+            margin: 1.2em 0;
+            width: 400px;
+            background-color: rgb(180, 223, 223);
+            border-radius: 5px;
+            display: flex;
+            align-items: center;
+            padding: 1.2em 1.5em;
+            svg{
+                color: teal ;
+
+                &:first-child{
+                    font-size: 1.2em;
+                    margin-right: 0.8em;
+                }
+            }
+            p{
+                flex: 1;
+                font-size: 0.9em;
+            }
+            .actions{
+                justify-self: flex-end;
+                cursor: pointer;
+                .fa-spinner{
+                    font-size:1.2em ;
+                }
+
+            }
+        }
+   
+    }

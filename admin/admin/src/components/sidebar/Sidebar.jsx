@@ -232,7 +232,7 @@ const Sidebar = () => {
           <Typography>
            
               <li> 
-              <Link to='/products' style={{textDecoration:"none"}}>
+              <Link to='/earnings' style={{textDecoration:"none"}}>
              <PaidIcon className='icon' sx ={onclick=>{navigate("/users")}} />
             <i> <span>  drivers payment reports </span></i>
             </Link>
@@ -297,19 +297,21 @@ const Sidebar = () => {
 
           <AccordionSummary
           >
+             <Link to='/vehicules' style={{textDecoration:"none"}}>
            <li> 
              <CommuteIcon className='icon'/>
              <span> Vehicules</span>
            </li>
-           
+           </Link>
            </AccordionSummary>
           <AccordionSummary
           >
+            <Link to='/code' style={{textDecoration:"none"}} >
            <li> 
              <CodeIcon className='icon'/>
              <span> Promo Code</span>
            </li>
-           
+           </Link>
            </AccordionSummary>
            <AccordionSummary>
             <li> 

@@ -1,7 +1,7 @@
 import React from './newride.scss'
 import Sidebar from "../../components/sidebar/Sidebar"
 import Navbar from "../../components/navbar/Navbar";
-
+import {Link} from "react-router-dom";
 import { useState } from 'react';
 import DriveFolderUploadOutlinedIcon from '@mui/icons-material/DriveFolderUpload';
 const Newride = ({inputs,title}) => {
@@ -12,6 +12,14 @@ const Newride = ({inputs,title}) => {
       <Sidebar/>
       <div className="newrideContainer">
         <Navbar/>
+        <div className="dataTablerideTitle">
+   
+       <Link to="/rides" 
+        style={{textDecoration:"none"}}
+        className='link'>
+        Back
+       </Link>
+  </div>
       <div className="top">
           <h1>{title}</h1>
       </div>
