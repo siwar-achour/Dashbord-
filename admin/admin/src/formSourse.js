@@ -103,31 +103,57 @@ export const driverInputs=[
         id:1,
         label:"Type",
         type:"text",
-        placeholder:"clio",
+        placeholder:"",
     },
     {
         id:2,
-        label:"name",
+        label:"username",
         type:"text",
-        placeholder:"hkkfkhh",
+        placeholder:"hamadi",
     },
     {
         id:3,
-        label:"Pick/drop adress ",
+        label:"lastname",
         type:"text",
-        placeholder:"sokra-lac",
+        placeholder:"belhaaj",
     }, {
         id:4,
-        label:"Date time",
+        label:"phone",
         type:"text",
-        placeholder:"Client",
+        placeholder:"26988444",
     },
-     {
+    
+    {
         id:5,
-        label:"Cost",
+        label:" id-vehicules",
         type:"",
-        placeholder:"",
+        placeholder:"3",
     },
+   
     
 ]
 
+export const vehiculeInputs=[
+    { 
+        id:1,
+        label:"matricule",
+        type:"text",
+        placeholder:"205 Tunis 460",
+    },
+    {
+        id:2,
+        label:"catégorie",
+        type:"text",
+        placeholder:"Polo",
+    }, {
+        id:3,
+        label:"Status",
+        type:"text",
+        placeholder:"active",
+    }, {
+        id:4,
+        label:"Driver",
+        type:"text",
+        placeholder:"Mouhedine trabelsi",
+    },
+];

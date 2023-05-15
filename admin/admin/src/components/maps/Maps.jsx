@@ -2,10 +2,12 @@ import "mapbox-gl/dist/mapbox-gl.css"
 import Map, { FullscreenControl,GeolocateControl, Marker, NavigationControl } from "react-map-gl";
 import React, {useState} from 'react';
 import './redloc.jpg';
-
  function Maps() {
   const [lng,setLng]=useState(9.400138);
   const [lat,setLat]=useState(33.8439408);
+ 
+// Set marker options.
+
 
   return (
     
@@ -16,20 +18,26 @@ import './redloc.jpg';
         height: "700px",
         borderRadius:"8px",
         border:"2px solid transparent"}}
+        projection="globe"
+        zoom='8'
       initialViewState={{
         latitude : lat,
         longitude:lng,
       }}
       mapStyle="mapbox://styles/mapbox/streets-v9"
+    
       >
         <Marker
-         latitude = {lat}
-         longitude={lng}
        
+          longitude={lng}
+          latitude={lat}
+          anchor="bottom"
+          draggable
       />
         <button className="btn-marker">
         <img src="/redloc.jpg" alt="" />
       </button> 
+      
       <NavigationControl
       position="bottom-right"
       />

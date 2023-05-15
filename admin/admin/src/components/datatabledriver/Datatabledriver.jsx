@@ -15,16 +15,18 @@ const Datatabledriver = () => {
          <div className='cellAction'>
           <ul>
                 <i>
-           <Link to='test' style={{textDecoration:"none"}}>
+           <Link to='singledriver' style={{textDecoration:"none"}}>
            <button onClick={()=>navigate('new')} style={{border:'none', background:'transparent',margin:'1.2em -2em auto' }}>
             <div className="viewButton"style={ {height: '60%'}} >    View</div>
            </button>
            </Link>
            </i>
            <i>
+           <Link to='viewdriver' style={{textDecoration:"none"}}>
            <button onClick={()=>navigate('new')} style={{border:'none', background:'transparent',margin:'1.2em -2em auto' }}>
             <div className="updateButton"style={ {height: '60%'}} > update</div>
            </button>
+           </Link>
            </i>
            <i>
            <button onClick={()=>navigate('new')} style={{border:'none', background:'transparent',margin:'1.2em -2em auto' }}>
@@ -44,7 +46,7 @@ const Datatabledriver = () => {
     <div className='datatabledriver' style={ {height: '90%', width: '95%'}}>
   <div className="dataTabledriverTitle">
     Add New Driver
-    <Link to="new" 
+    <Link to="viewdriver" 
     style={{textDecoration:"none"}}
     className='link'>
     Add New 

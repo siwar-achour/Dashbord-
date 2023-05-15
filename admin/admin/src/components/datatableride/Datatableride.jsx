@@ -43,7 +43,7 @@ const Datatableride = () => {
     <div className='datatableride' style={ {height: '90%', width: '95%'}}>
   <div className="dataTablerideTitle">
     Add New Ride
-    <Link to="/newride" 
+    <Link to="newride" 
     style={{textDecoration:"none"}}
     className='link'>
     Add New 

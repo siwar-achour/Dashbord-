@@ -1,0 +1,65 @@
+
+.document{
+  
+    display: flex;
+    width: 95%;
+   
+        h1{
+            justify-content: space-between;
+            display: flex;
+            flex: 1;
+            padding: 2px;
+            box-shadow: 2px 5px 22px 2px rgba(0,0,0,0.47);
+            -webkit-box-shadow: 2px 2px 10px 1px rgba(0,0,0,0.47);
+            -moz-box-shadow: 2px 4px 10px 1px rgba(201,201,201,0.47);
+            border-radius:5px ;
+            height: 35px;
+            color: gray;
+        }
+        .ajout{
+            justify-content: space-between;
+            display: flex;
+            flex: 1;
+            padding: 2px;
+            box-shadow: 2px 5px 22px 2px rgba(0,0,0,0.47);
+            -webkit-box-shadow: 2px 2px 10px 1px rgba(0,0,0,0.47);
+            -moz-box-shadow: 2px 4px 10px 1px rgba(201,201,201,0.47);
+            border-radius:5px ;
+            height: 35px;
+            color: gray; 
+        }
+
+ 
+    
+  
+    
+    
+    .documentContainer{
+        flex: 6;
+       .upload{
+        padding: 9px;
+            padding-left: 350px;
+       }
+    .next{
+        padding: 40px;
+        padding-left: 550px;
+        i{  
+        button{
+              width: 80px;
+              height: 30px;
+                color:white;
+                border-radius: 6%;
+                border-color: transparent;
+                background-color: teal;
+            }
+          
+       
+        }
+    }
+        
+    }
+
+
+    
+       
+}
