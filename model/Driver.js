@@ -18,7 +18,8 @@ const driverSchema = new mongoose.Schema({
         pdf_data:String
     },
     vehiculeId:{
-        type:Number
+        type:Number,
+        unique :true
     }
    
 
