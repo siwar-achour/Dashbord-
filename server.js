@@ -6,6 +6,13 @@ const cors = require("cors");
 
 
 
+app.use(cors(
+  {
+    origin:"http://localhost:3000"
+  }
+));
+
+
 
 //mongoose
 const mongoose = require('mongoose');
@@ -25,6 +32,7 @@ const UserRouter = require("./api/User");
 const productRoutes = require("./routes/product");
 const driverRoutes = require("./routes/driver");
 const vehiculeRoutes = require("./routes/vehicule");
+const pinRoutes = require("./routes/pins");
 //Middlewares
 app.use(express.json());
 app.use(cors());
@@ -32,6 +40,7 @@ app.use(cors());
 app.use("/api/products", productRoutes);
 app.use("/api/drivers", driverRoutes);
 app.use("/api/vehicules", vehiculeRoutes);
+app.use("/api/pins", pinRoutes);
 //
 app.use('/user',UserRouter)
 //Add file

@@ -1,49 +1,96 @@
 import "mapbox-gl/dist/mapbox-gl.css"
-import Map, { FullscreenControl,GeolocateControl, Marker, NavigationControl } from "react-map-gl";
-import React, {useState} from 'react';
-import './redloc.jpg';
+import Map, { Popup,FullscreenControl,GeolocateControl, Marker, NavigationControl } from "react-map-gl";
+import React, {useEffect, useState} from 'react';
+import RoomIcon from '@mui/icons-material/Room';
+import StarIcon from '@mui/icons-material/Star';
+import axios from "axios";
+import './maps.scss';
  function Maps() {
-  const [lng,setLng]=useState(9.400138);
-  const [lat,setLat]=useState(33.8439408);
- 
+ const[pins,setPins]=useState([]);
+ const[viewport,setViewport]=useState({
+  
+    width:"100px",
+    height: "700px",
+    borderRadius:"8px",
+    border:"2px solid transparent",
+    projection:"globe",
+    lat : 35.52469159635259,
+    long:11.038349313917042,
+    //zoom:15
+  
+ })
 // Set marker options.
+useEffect(()=>{
+  const getPins = async()=>{
+    try{
+      const res= await axios.get('/pins');
+      setPins(res.data)
+    }catch(err){
+      console.log(err)
+    }
+  };
+  getPins ()
+},[])
+
 
 
   return (
-    
+ 
       <Map 
-      mapboxAccessToken="pk.eyJ1Ijoic2l3YXI0NCIsImEiOiJjbGhrc2dleHAwajBwM2RzMXFmMHN3Z3dyIn0.DwGm2V9r12GMMozAntZXKQ"
-      style={{
-        width:"100%",
-        height: "700px",
-        borderRadius:"8px",
-        border:"2px solid transparent"}}
-        projection="globe"
-        zoom='8'
-      initialViewState={{
-        latitude : lat,
-        longitude:lng,
-      }}
-      mapStyle="mapbox://styles/mapbox/streets-v9"
-    
-      >
-        <Marker
-       
-          longitude={lng}
-          latitude={lat}
-          anchor="bottom"
-          draggable
-      />
-        <button className="btn-marker">
-        <img src="/redloc.jpg" alt="" />
-      </button> 
-      
-      <NavigationControl
-      position="bottom-right"
-      />
+      {...viewport}
+       mapboxAccessToken="pk.eyJ1Ijoic2l3YXI0NCIsImEiOiJjbGhrc2dleHAwajBwM2RzMXFmMHN3Z3dyIn0.DwGm2V9r12GMMozAntZXKQ"
+      onViewportChange={(nextViewport)=>setViewport(nextViewport)}
+      mapStyle="mapbox://styles/siwar44/clhkr027h01oh01p641cp7sdt"
      
+      >
+   {pins.map(p=>(
+          <>
+   
+     <Marker
+          longitude={p.long}
+          latitude={p.lat}
+          offsetLeft={-20}
+          offsetTop={-10}
+       
+       >
+       
+       <RoomIcon style={{fontSize:viewport.zoom*100}} />
+      </Marker>
+      
+      <Popup 
+        longitude={p.long} 
+        latitude={p.lat}
+        anchor="bottom"
+       >
+       <div className="card">
+        <label>{p.title}</label>
+        <h4 className="place">hi</h4>
+        <label>Review</label>
+        <p className="desc">good ride</p>
+        <label>Rating</label>
+        <div className="stars">
+          <StarIcon className="star" />
+          <StarIcon className="star"/>
+          <StarIcon className="star"/>
+          <StarIcon className="star"/>
+          <StarIcon className="star"/>
+        </div>
+        <label>Information</label>
+        <span className="username">Created by <b>{p.username}</b></span>
+        <span className="date">1 hour ago</span>
+
+       </div>
+      </Popup>
+   </>
+   ))}
+  
+    
+     <NavigationControl
+      position="bottom-right"
+     />
       <FullscreenControl/>
       <GeolocateControl/>
+      
       </Map>
    
   );

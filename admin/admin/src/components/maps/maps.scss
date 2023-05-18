@@ -1,7 +1,30 @@
-.btn-marker{
 
-    img{
-        width: 20px;
-        height: 20px;
+
+     .card{
+        width: 150px;
+        height:200px ;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
     }
-}
+    label{
+        width:150px ;
+        color:tomato;
+        font-size: 12px;
+        border-bottom: 1px solid tomato;
+        margin:2px;
+        margin: 3px 0;
+    
+    }
+    .desc{
+      font-size: 12px;  
+    }
+    .star{
+        color: teal;   
+       }
+       .username{
+           font-size: 10px;
+       }
+       .date{font-size: 10px};
+     
+   

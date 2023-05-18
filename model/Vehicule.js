@@ -4,7 +4,8 @@ const vehiculeSchema = new mongoose.Schema({
     
     matricule:{
         type:String,
-        required:true
+        required:true,
+        unique :true
     },
     categorie:{
         type:String,
