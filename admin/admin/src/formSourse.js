@@ -1,7 +1,7 @@
-export const userInputs =[
+export const ClientInputs =[
     {
         id:1,
-        label:"Username",
+        label:"Clientname",
         type:"text",
         placeholder:"Siwar_Achour",
     },

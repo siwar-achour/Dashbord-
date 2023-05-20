@@ -1,6 +1,7 @@
 const express = require('express');
 const router = express.Router();
 const User = require('../model/User');
+const{check,validationResult}=require('express-validator');
 
 //password handler
 const  bcrypt = require('bcrypt');
@@ -77,7 +78,11 @@ res.json({
 
 
 //signin
-router.post('/signin',(req,res)=>{
+router.post('/signin',[
+    check('email',"Email length error").isEmail().isLength({min:10,max:30}),
+  check('password',"password length 8-10").isLength({min:8,max:10})
+],
+(req,res)=>{
     let{email,password}=req.body;
     email=email.trim();
     password= password.trim();

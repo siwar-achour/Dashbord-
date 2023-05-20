@@ -32,6 +32,7 @@ const pin_create= async (req,res)=>{
         long: req.body.long,
         Matricule : req.body.Matricule,
         vehiculeId : req.body.vehiculeId,
+        status : req.body.status,
     });
         try{
             const savedPin = await pin.save();
@@ -53,9 +54,10 @@ const pin_update= async (req,res)=>{
         long: req.body.long,
         Matricule: req.body.Matricule,
         vehiculeId : req.body.vehiculeId,
+        status : req.body.status,
     };
    
-        const updatePin = await Driver.findByIdAndUpdate(
+        const updatePin = await Pin.findByIdAndUpdate(
             {_id: req.params.pinId},
             pin
         );
@@ -68,7 +70,7 @@ const pin_update= async (req,res)=>{
 //Delete pin
 const pin_delete= async (req,res)=>{
     try{
-            const removePin = await Driver.findByIdAndDelete(req.params.pinId);
+            const removePin = await Pin.findByIdAndDelete(req.params.pinId);
             res.json(removePin);
         }catch(error){
             res.json({message:error});

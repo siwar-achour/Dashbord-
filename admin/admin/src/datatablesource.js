@@ -1,3 +1,22 @@
+/*{
+import {useEffect } from 'react';
+import axios from "axios";
+const[drivers,setDrivers]=useState([]);
+  useEffect(()=>{
+    const getDrivers = async()=>{
+      try{
+        const res= await axios.get('/drivers');
+        setDrivers(res.data)
+      }catch(err){
+        console.log(err)
+      }
+    };
+    getDrivers ()
+  },[])
+
+}*/
+
+
 export const userColumns = [
     { field: 'id', headerName: 'ID', width: 100 },
     {
@@ -87,11 +106,11 @@ export const userRows = [
     { id: 9, lastName: 'Roxie', firstName: 'Harvey', age: 65 },
   ];
   export const rideColumns = [
-    { field: 'id_Ride', headerName: 'ID', width: 100 },
+    { field: 'id', headerName: 'ID', width: 95 },
     {
       field: 'Type',
       headerName: 'Type',
-      width: 200,
+      width: 110,
       renderCell:(params) =>{
         return (
           <div className="cellWithTable">
@@ -104,7 +123,7 @@ export const userRows = [
     {
       field: 'Name',
       headerName: 'Name',
-      width: 200,
+      width: 115,
       renderCell:(params) =>{
         return (
           <div className="cellWithTable">
@@ -117,7 +136,7 @@ export const userRows = [
     {
       field: 'pick-drop adress',
       headerName: 'Pick/drop adress',
-      width: 200,
+      width: 185,
       renderCell:(params) =>{
         return (
           <div className="cellWithTable">
@@ -130,7 +149,7 @@ export const userRows = [
     {
       field: 'date',
       headerName: 'Date Time',
-      width: 200,
+      width: 145,
       renderCell:(params) =>{
         return (
           <div className="cellWithTable">
@@ -143,7 +162,7 @@ export const userRows = [
     {
       field: 'cost',
       headerName: 'Cost',
-      width: 200,
+      width: 110,
       renderCell:(params) =>{
         return (
           <div className="cellWithTable">
@@ -153,18 +172,45 @@ export const userRows = [
         );
       },
     },
+    {
+      field: 'vehicule',
+      headerName: 'Matricule vehicule',
+      width: 195,
+      renderCell:(params) =>{
+        return (
+          <div className="cellWithTable">
+         
+          <p>{params.row.phoned}</p>
+          </div>
+        );
+      },},
+      {
+        field: 'client',
+        headerName: 'Client Name',
+        width: 155,
+        renderCell:(params) =>{
+          return (
+            <div className="cellWithTable">
+           
+            <p>{params.row.phoned}</p>
+            </div>
+          );
+        },}
+    
   ];
     
     export const rideRows = [
-      { id: 1, type: 'Ride', name: 'Jon', Pick: "35" ,date:'jumpark to filege',cost:'200$', status:'active'},
-      { id: 2, type: 'Ride', name: 'ghofrane', Pick: "35" ,date:'zone indistruelle to hamadi abid sokra',cost:'200$', status:'active'},
-      { id: 3, type: 'Ride', name: 'siwar', Pick: "35" ,date:'elnasser to sidi bou',cost:'400$', status:'active'},
-      { id: 4, type: 'Ride', name: 'wafa', Pick: "35" ,date:'sokra1 to lac1',cost:'300$', status:'active'},
-      { id: 5, type: 'Ride', name: 'hello', Pick: "35" ,date:'Snow.Jon@gmail.com',cost:'175$', status:'active'},
+      { id: 1, type: 'Ride', name: 'Jon',date: "35" ,Pick: 'jumpark to filege',cost:'200$', status:'active',vehicule:"",client:''},
+      { id: 2, type: 'Ride', name: 'ghofrane',date:"35" , Pick:'zone indistruelle to hamadi abid sokra',cost:'200$', status:'active'},
+      { id: 3, type: 'Ride', name: 'siwar', date: "35" , Pick:'elnasser to sidi bou',cost:'400$', status:'active'},
+      { id: 4, type: 'Ride', name: 'wafa', date: "35" , Pick:'sokra1 to lac1',cost:'300$', status:'active'},
+      { id: 5, type: 'Ride', name: 'hello',date:"35" , Pick:'Snow.Jon@gmail.com',cost:'175$', status:'active'},
     
     ];
 
 
+
+    
     export const driverColumns = [
       { field: 'id', headerName: 'ID', width: 100 },
       {
@@ -238,6 +284,7 @@ export const userRows = [
        },
     
      },
+   
       
     ];
   
@@ -415,7 +462,7 @@ export const userRows = [
       {
         field: 'Code Name',
         headerName: 'Code Name',
-        width: 200,
+        width: 150,
         renderCell:(params) =>{
           return (
             <div className="cellWithTable">
@@ -443,7 +490,7 @@ export const userRows = [
       {
         field: 'Value',
         headerName: 'Value',
-        width: 130,
+        width: 120,
         renderCell:(params) =>{
           return (
             <div className="cellWithTable">
@@ -458,7 +505,7 @@ export const userRows = [
       { 
         field : "Usage Limit",
         headerName:"Usage Limit",
-        width:160,
+        width:180,
       renderCell:(params)=>{
          return(
           <div className="cellWithTable">
@@ -472,7 +519,7 @@ export const userRows = [
       {
         field: 'User Used',
         headerName: 'User Used',
-        width: 230,
+        width: 200,
         renderCell:(params) =>{
           return (
             <div className="cellWithTable">
@@ -487,7 +534,7 @@ export const userRows = [
       {
         field: 'Expired Date',
         headerName: 'Expired Date',
-        width: 230,
+        width: 200,
         renderCell:(params) =>{
           return (
             <div className="cellWithTable">

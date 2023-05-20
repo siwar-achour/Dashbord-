@@ -1,76 +1,88 @@
-import React from 'react';
+import React, { useState } from 'react';
 import './login.scss';
 import { Button } from '@mui/material';
 import Box from '@mui/material/Box';
 import axios from "axios";
-import {useEffect ,useState} from "react";
+
 import { useNavigate} from "react-router-dom";
 //import { Link} from "react-router-dom";
 
+
+
+
+
+
+import img from './logo.png';
+import img1 from './back.png';
 function Login () {
-const[email,setEmail]=useState("");
-const[password,setPassword]=useState("");
+ 
+const[email,setEmail]=useState([]);
+const[password,setPassword]=useState([]);
+
 const navigate=useNavigate();
   async function login(event)
 {
   event.preventDefault();
   try{
-    await axios.post("http://localhost:3010/user/signin",
+    const res =await axios
+    .post("http://localhost:3010/user/Signin",
     {
       email:email,
       password:password,
-    }).then((res)=>
-    {
-      console.log(res)
-      const data=res.data;
-      if (data.status === true)
-      {
-        alert("Login successfly");
-        navigate("/");
-      }
-      else
-      {
-        alert("Login failed")
-      }
-    },fail=>{
-      console.error(fail);
     });
+    const data = res.data;
+    if (data.status === "SUCCESS") {
+      console.log("Signin successful");
+      console.log("Message:", data.message);
+      navigate("/");
+      alert("Login successfly");
+      // Autres actions à effectuer en cas de connexion réussie
+    } else {
+      console.log("Signin failed");
+      console.log("Message:", data.message);
+      alert("Login Failed");
+      // Autres actions à effectuer en cas d'échec de connexion
+    }
+    
   }
     catch(err){alert(err);}
 }  
 
 
+
 return (
-
-
-    <div className='login'>
-
-      <form action='POST'>
-        <Box
+  
+    <div className='login' style={{ 
+      backgroundImage: `url(${img1})`,backgroundsize: 'cover'  
+    }}>
+ 
+      <form >
+    
+        <Box className="box"
           sx={{
             width: 350,
             height: 350,
             backgroundColor: 'lightgrey',
           }}
         >
-          <h1>Login</h1>
-          <table>
+           <img src={img} alt="" className='image'/>
+           <h1>Hello ! Let's start </h1>
+           <h5>Login to continue</h5>
+          <tbody>
             <tr>
-              <th><label htmlfor="email">E-mail:</label></th>
-              <th><input type="email" placeholder="youremail@gmail.com " id="email"
-                className="name" name="email" 
+       
+               <th><input type="email" placeholder="    Your Email                            @gmail.com " 
+               id="email"
+               className="name" name="email" 
                 value={email}
                 onChange={(event)=>{
                   setEmail(event.target.value);
                 }}
-                
-                />
-
-              </th>
+                 />
+                </th>
             </tr>
             <tr>
-              <th><label htmlfor="password">password:</label></th>
-              <th><input type="password" placeholder="********" id="password"
+              <th><input type="password" placeholder="    ********" id="password"
                 className="name" name="password"
                 value={password}
                 onChange={(event)=>{
@@ -81,15 +93,15 @@ return (
               </th>
             </tr>
 
-          </table>
+          </tbody>
           <div className='button'>
 
-            <Button variant="contained" loadingPosition='center' onclick={login}>Login</Button>
+            <Button variant="contained" loadingPosition='center' onClick={login}>Login</Button>
 
 
           </div>
         </Box>
-
+      
       </form>
 
     </div>

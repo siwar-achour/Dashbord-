@@ -57,7 +57,7 @@ const Datatable = () => {
   return (
     <div className='datatable' style={ {height: '90%', width: '95%'}}>
   <div className="dataTableTitle">
-    Add New User
+    Add New Client
     <Link to="new" 
     style={{textDecoration:"none"}}
     className='link'>

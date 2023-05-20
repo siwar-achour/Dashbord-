@@ -4,10 +4,11 @@ import  {vehiculeColumns, vehiculeRows} from "../../datatablesource";
 import {Link, useNavigate} from "react-router-dom";
 import { useState } from 'react';
 
+
 const Datatablevehicule = () => {
   const navigate = useNavigate();
   const[records,setRecords]=useState(vehiculeRows);
-
+  
   
   
   function handleFilter(event){
@@ -67,6 +68,7 @@ const Datatablevehicule = () => {
     <div>
       <input type='text' onChange={handleFilter} placeholder='Search' ></input>
     </div>
+    
   <DataGrid
         records={vehiculeRows}
         columns={vehiculeColumns.concat(actionColumn)}
@@ -77,8 +79,8 @@ const Datatablevehicule = () => {
         disableSelectionOnClick
        
           />
-        
-    </div>
+    
+   </div>
   )
 }
 

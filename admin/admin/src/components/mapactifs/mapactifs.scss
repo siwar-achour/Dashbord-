@@ -1,0 +1,32 @@
+
+
+.card{
+    width: 150px;
+    height:300px ;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+.lab{label{
+    width:30px ;
+    color:tomato;
+    font-size: 15px;
+    border-bottom: 1px solid tomato;
+    margin:2px;
+    margin: 3px 0;
+    h4{
+        font-size: 10px;
+    }
+
+}}
+.desc{
+  font-size: 12px;  
+}
+.stars{
+    color: teal;   
+   }
+   .username{
+       font-size: 10px;
+   }
+   .date{font-size: 10px};
+

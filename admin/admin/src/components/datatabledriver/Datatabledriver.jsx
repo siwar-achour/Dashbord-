@@ -2,9 +2,19 @@ import React from './datatabledriver.scss'
 import { DataGrid } from '@material-ui/data-grid';
 import  {driverColumns, driverRows} from "../../datatablesource";
 import {Link, useNavigate} from "react-router-dom";
+import { useState } from 'react';
 
 const Datatabledriver = () => {
   const navigate = useNavigate();
+  const[records,setRecords]=useState(driverRows);
+  function handleFilter(event){
+    const newData = records.filter(row => 
+      {return row.firstNamed.toLowerCase().includes(event.target.value.toLowerCase())
+     
+        
+      } );
+      setRecords(newData) }
+   
   const actionColumn =[
     { 
       field : "action",
@@ -52,6 +62,9 @@ const Datatabledriver = () => {
     Add New 
     </Link>
   </div>
+  <div>
+      <input type='text' onChange={handleFilter} placeholder='Search' ></input>
+    </div>
   <DataGrid
         rows={driverRows}
         columns={driverColumns.concat(actionColumn)}

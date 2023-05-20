@@ -1,15 +1,12 @@
 import "mapbox-gl/dist/mapbox-gl.css"
 import Map, { Popup,FullscreenControl,GeolocateControl, Marker, NavigationControl } from "react-map-gl";
 import React, {useEffect, useState} from 'react';
-
+import RoomIcon from '@mui/icons-material/Room';
 import StarIcon from '@mui/icons-material/Star';
-import LocalTaxiIcon from '@mui/icons-material/LocalTaxi';
 import axios from "axios";
-import './maps.scss';
+import './mapinactifs.scss';
  function Maps() {
- const[pins,setPins]=useState([]);
-
-
+ const[rideinactifs,setPins]=useState([]);
  const[viewport,setViewport]=useState({
   
     width:"100px",
@@ -17,27 +14,23 @@ import './maps.scss';
     borderRadius:"8px",
     border:"2px solid transparent",
     projection:"globe",
-    lat : 36.80206897186395,
-    long:10.196716829753045,
-    
+    lat : 35.52469159635259,
+    long:11.038349313917042,
+   // zoom:6
   
  })
 // Set marker options.
 useEffect(()=>{
-  const getPins = async()=>{
+  const getRideinactifs = async()=>{
     try{
-      const res= await axios.get('/pins');
+      const res= await axios.get('/rideinactifs');
       setPins(res.data)
     }catch(err){
       console.log(err)
     }
   };
- 
-  getPins ()
-
-},[]);
-
-
+  getRideinactifs ()
+},[])
 
 
 
@@ -50,8 +43,7 @@ useEffect(()=>{
       mapStyle="mapbox://styles/siwar44/clhkr027h01oh01p641cp7sdt"
      
       >
-      
-   {pins.map(p=>(
+   {rideinactifs.map(p=>(
           <>
    
      <Marker
@@ -62,20 +54,16 @@ useEffect(()=>{
        
        >
        
-       <LocalTaxiIcon style={{fontSize:viewport.zoom*4, color:"teal"}} />
+       <RoomIcon style={{fontSize:viewport.zoom*4, color:"red"}} />
       </Marker>
       
       <Popup 
         longitude={p.long} 
         latitude={p.lat}
         anchor="bottom"
-   
-       
        >
        <div >
-       <div className="lab">
         <label>Title</label>
-        </div>
         <h4 className="place">{p.title}</h4>
         <div className="lab">
         <label>Matricule</label>
@@ -85,16 +73,12 @@ useEffect(()=>{
         <label>Rating</label>
         </div>
         <div className="stars">
-          <StarIcon className="star" />
-          <StarIcon className="star"/>
-          <StarIcon className="star"/>
-          <StarIcon className="star"/>
-          <StarIcon className="star"/>
+          <StarIcon className="stars" />
+          <StarIcon className="stars"/>
+          <StarIcon className="stars"/>
+          <StarIcon className="stars"/>
+          <StarIcon className="stars"/>
         </div>
-        <div className="lab">
-        <label>Status</label>
-        </div>
-        <p className="desc">{p.status}</p>
         <div className="lab">
         <label>Information</label>
         </div>

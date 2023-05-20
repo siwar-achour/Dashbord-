@@ -137,8 +137,16 @@ const Sidebar = () => {
                 </Link>
            </li>
            <li>
+           <Link to ='/maps' style={{textDecoration:"none"}}>
              <RoomIcon className='icon'/>
                 <span> View of the driver card</span>
+                </Link>
+           </li>
+           <li>
+           <Link to ='/mapinactifs' style={{textDecoration:"none"}}>
+             <RoomIcon className='icon'/>
+                <span> View of the driver card inactifs</span>
+                </Link>
            </li>
           </Typography>
         </AccordionDetails>
@@ -193,22 +201,22 @@ const Sidebar = () => {
           <Typography>
           <li>
              <PeopleAltIcon className='icon'/>
-                <span> Users   </span>
+                <span> Clients   </span>
            </li>
           </Typography>
         </AccordionSummary>
         <AccordionDetails>
           <Typography>
           <li>
-          <Link to='/users' style={{textDecoration:"none"}}>
+          <Link to='/clients' style={{textDecoration:"none"}}>
              <PersonIcon className='icon'/>
-                <span> Users </span>
+                <span> Clients </span>
             </Link>  
            </li>
            <li>
-           <Link to='/users' style={{textDecoration:"none"}}>
+           <Link to='/clients' style={{textDecoration:"none"}}>
              <BlockIcon className='icon'/>
-                <span> Bloked users   </span>
+                <span> Bloked clients   </span>
              </Link>   
            </li>
           </Typography>
@@ -334,10 +342,13 @@ const Sidebar = () => {
            </li>
            </AccordionSummary>
            <AccordionSummary>
+           <Link to='/Login' style={{textDecoration:"none"}} >
+        
           <li> 
             <InputIcon className='icon' />
             <span> Log Out</span>
           </li>
+          </Link>
           </AccordionSummary>
     </ul>
     
