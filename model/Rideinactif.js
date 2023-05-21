@@ -1,6 +1,6 @@
 const mongoose = require('mongoose');
 
-const pinSchema = new mongoose.Schema({
+const rideinactifSchema = new mongoose.Schema({
    
     username:{
         type:String,
@@ -37,12 +37,7 @@ const pinSchema = new mongoose.Schema({
         unique:true
       
     },
-    status:{
-        type:String,
-        required:true
-       
-    },
    
 },  
 );
-module.exports = mongoose.model('Pin',pinSchema);
+module.exports = mongoose.model('Rideinactif',rideinactifSchema);

@@ -5,7 +5,6 @@ const server = http.createServer(app);
 const cors = require("cors");
 
 
-
 app.use(cors(
   {
     origin:"http://localhost:3000"
@@ -30,9 +29,10 @@ mongoose.connect('mongodb+srv://admin:admin@expressapi.xdbept9.mongodb.net/',
 //Import routes
 const UserRouter = require("./api/User");
 const productRoutes = require("./routes/product");
-const driverRoutes = require("./routes/driver");
+const driverRoutes = require("./routes/drivers");
 const vehiculeRoutes = require("./routes/vehicule");
 const pinRoutes = require("./routes/pins");
+const rideinactifRoutes = require("./routes/rideinactifs");
 //Middlewares
 app.use(express.json());
 app.use(cors());
@@ -41,8 +41,10 @@ app.use("/api/products", productRoutes);
 app.use("/api/drivers", driverRoutes);
 app.use("/api/vehicules", vehiculeRoutes);
 app.use("/api/pins", pinRoutes);
+app.use("/api/rideinactifs", rideinactifRoutes);
 //
 app.use('/user',UserRouter)
+
 //Add file
 
 app.post("/api/drivers/upload",(req,res)=>{

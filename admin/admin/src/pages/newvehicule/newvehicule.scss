@@ -31,18 +31,22 @@
                 flex-wrap: wrap;
                 gap: 20px;
                 justify-content: space-around;
+                
 
                 .formInput{
                     width: 40%;
-                    
+                   
                     label{
                     display: flex;
                     align-items: center;
-                    gap: 30px;
-                   
+                    gap: 50px;
+                    text-decoration:0px solid gray;
+                    font-size: 15px;
+                    color:rgb(13, 13, 13);
 
                         .icon{
                             cursor: pointer;
+                            
                         }
                      }
                     input{
@@ -62,6 +66,7 @@
                   font-weight: bold;
                   cursor: pointer;
                   margin-top: 10px;
+                  
                 }
             }
         }

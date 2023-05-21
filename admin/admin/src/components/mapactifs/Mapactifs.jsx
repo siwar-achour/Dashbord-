@@ -5,11 +5,9 @@ import React, {useEffect, useState} from 'react';
 import StarIcon from '@mui/icons-material/Star';
 import LocalTaxiIcon from '@mui/icons-material/LocalTaxi';
 import axios from "axios";
-import './maps.scss';
- function Maps() {
+import './mapactifs.scss';
+ function Mapactifs() {
  const[pins,setPins]=useState([]);
-
-
  const[viewport,setViewport]=useState({
   
     width:"100px",
@@ -32,12 +30,8 @@ useEffect(()=>{
       console.log(err)
     }
   };
- 
   getPins ()
-
-},[]);
-
-
+},[])
 
 
 
@@ -50,7 +44,6 @@ useEffect(()=>{
       mapStyle="mapbox://styles/siwar44/clhkr027h01oh01p641cp7sdt"
      
       >
-      
    {pins.map(p=>(
           <>
    
@@ -73,13 +66,12 @@ useEffect(()=>{
        
        >
        <div >
-       <div className="lab">
         <label>Title</label>
-        </div>
         <h4 className="place">{p.title}</h4>
         <div className="lab">
         <label>Matricule</label>
         </div>
+       
         <p className="desc">{p.Matricule}</p>
         <div className="lab">
         <label>Rating</label>
@@ -117,4 +109,4 @@ useEffect(()=>{
    
   );
 }
-export default Maps;
+export default Mapactifs;

@@ -5,12 +5,13 @@ import New from "./pages/new/New";
 import Document from "./components/document/Document";
 import Single from "./pages/single/Single";
 import Mapview from "./pages/mapview/Mapview";
+import Mapviewinactif from "./pages/mapviewinactif/Mapviewinactif";
 //import Document from "./components/document/Document";
 import "./style/dark.scss"
 import {  BrowserRouter, Routes ,  Route , } from "react-router-dom";
 import {useContext } from "react";
 import { DarkModeContext } from "./context/darkModeContext";
-import { vehiculeInputs ,driverInputs, userInputs , rideInputs , docInputs} from "./formSourse";
+import { vehiculeInputs ,driverInputs, ClientInputs , rideInputs , docInputs} from "./formSourse";
 import Listride from "./pages/listride/Listride";
 import Listdriver from "./pages/listdriver/Listdriver";
 import Newride from "./pages/newride/Newride";
@@ -40,14 +41,15 @@ function App() {
           <Route  path="/" >
           <Route index element={<Home/>} />
           <Route path="login" element={<Login/>} />
-          <Route path="users">
+          <Route path="clients">
               <Route index element={<List />}/>
-              <Route path=":UserId" element={<Single/>} />
+              <Route path=":ClientId" element={<Single/>} />
               <Route path="test" element={<Single/>} />
-              <Route path="new" element={<New inputs={userInputs} title="Add New User"/>} />
+              <Route path="new" element={<New inputs={ClientInputs} title="Add New Client"/>} />
            
           </Route>
           <Route path="maps" element={<Mapview/>}/>
+          <Route path="mapinactifs" element={<Mapviewinactif/>}/>
           <Route path="documents" element={<Document/>}/>
           <Route path="upload" element={<Upload/>}/>
           
