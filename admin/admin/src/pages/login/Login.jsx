@@ -32,10 +32,11 @@ const navigate=useNavigate();
     });
     const data = res.data;
     if (data.status === "SUCCESS") {
-      console.log("Signin successful");
+     
+      
       console.log("Message:", data.message);
-      navigate("/");
-      alert("Login successfly");
+      navigate("/home");
+     
       // Autres actions à effectuer en cas de connexion réussie
     } else {
       console.log("Signin failed");
@@ -71,7 +72,7 @@ return (
           <tbody>
             <tr>
        
-               <th><input type="email" placeholder="    Your Email                            @gmail.com " 
+               <th><input type="email" placeholder="    Your Email" 
                id="email"
                className="name" name="email" 
                 value={email}

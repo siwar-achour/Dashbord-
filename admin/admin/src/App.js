@@ -25,8 +25,13 @@ import Singlevehicule from "./pages/singlevehicule/Singlevehicule";
 import Singledriver from "./pages/singledriver/Singledriver";
 import Newdriver from "./pages/newdriver/Newdriver";
 import Upload from "./components/upload/Upload";
+import Listcomminuty from "./pages/listcomminuty/Listcomminuty";
 import Listearning from "./pages/listearning/Listearning";
 import Listcode from "./pages/listcode/Listcode";
+import Listtaxi from "./pages/listtaxi/Listtaxi";
+import Listblocked from "./pages/listblocked/Listblocked";
+import Listdestination from './pages/listdestination/Listdestination';
+import Listprice from './pages/listprice/Listprice';
 //import Listride from "../../components/tableride/Tableride";
 //require('leaflet/dist/leaflet.css');
 function App() {
@@ -39,20 +44,31 @@ function App() {
       
         <Routes>
           <Route  path="/" >
-          <Route index element={<Home/>} />
-          <Route path="login" element={<Login/>} />
+          <Route index element={<Login/>} />
+          <Route path="home" element={<Home/>} />
           <Route path="clients">
               <Route index element={<List />}/>
               <Route path=":ClientId" element={<Single/>} />
               <Route path="test" element={<Single/>} />
               <Route path="new" element={<New inputs={ClientInputs} title="Add New Client"/>} />
-           
+
           </Route>
+          <Route path="blockeds">
+              <Route index element={<Listblocked/>}/>
+              <Route path=":RideId" element={<Singleride/>} />
+              <Route path="test" element={<Singleride/>} />
+              <Route path="newride" element={<Newride inputs={rideInputs} title="Add New Ride"/>} />
+         </Route>
+
           <Route path="maps" element={<Mapview/>}/>
           <Route path="mapinactifs" element={<Mapviewinactif/>}/>
           <Route path="documents" element={<Document/>}/>
           <Route path="upload" element={<Upload/>}/>
-          
+           <Route path="comminuty" element={<Listcomminuty/>}/>
+           <Route path="taxi" element={<Listtaxi/>}/>
+           <Route path="destination" element={<Listdestination/>}/>
+           <Route path="cost" element={<Listprice/>}/>
+         
           
           <Route path="drivers">
               <Route index element={<Listdriver/>}/>
@@ -68,6 +84,7 @@ function App() {
               <Route path="test" element={<Singleride/>} />
               <Route path="newride" element={<Newride inputs={rideInputs} title="Add New Ride"/>} />
           </Route>
+
 
            
           <Route path="vehicules">

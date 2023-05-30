@@ -1,25 +1,32 @@
 const mongoose = require('mongoose');
 
 const driverSchema = new mongoose.Schema({
-   
+    id:{
+        type:String,
+        unique:true,
+    },
     lastname:{
         type:String,
-        required:true
+        
     },
     firstname:{
         type:String,
-        required:true
+    
     },
     phone:{
         type:Number,
-        required:true
+       
     },
     documents:{
-        pdf_data:String
+        type:String
     },
     vehiculeId:{
         type:Number,
-        unique :true
+        unique:true,
+       
+    },
+    status:{
+        type:Boolean
     }
    
 

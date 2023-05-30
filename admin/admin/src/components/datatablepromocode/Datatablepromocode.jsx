@@ -58,11 +58,21 @@ const Datatablevehicule = () => {
     <div className='datatablepromocode' style={ {height: '90%', width: '95%'}}>
    <div className="dataTablepromocodeTitle">
     List Codes
-    <Link to="/" 
+    <div className='espace'>
+      <th> <Link to="viewcode" 
     style={{textDecoration:"none"}}
     className='link'>
-    Back
+    Add New 
+    </Link></th>
+      <th>
+      <Link to="/home" 
+    style={{textDecoration:"none"}}
+    className='link'>
+     Back
     </Link>
+      </th>
+    </div>
+   
   </div>
     <div>
       <input type='text' onChange={handleFilter} placeholder='Search' ></input>

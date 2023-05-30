@@ -1,0 +1,38 @@
+.listtaxi{
+    display: flex;
+    width: 100%;
+    
+    .listcomminutyContainer{
+        flex: 6;
+       
+       form{
+        padding: 15px;
+        padding-left: 80px;
+       
+   .static1{
+       
+    color: gray;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    font-size: 25px;
+    padding-left: 15px;
+  }
+        .type{
+            align-items: center;
+            padding: 10px;
+            .com{
+                font-size: 15px;
+                padding: 50px 5px 45px;
+               
+            }
+           
+        }
+       }
+      
+    
+
+    }
+
+}
+  

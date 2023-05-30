@@ -5,15 +5,30 @@ import Navbar  from '../../components/navbar/Navbar';
 import Listvehicule from '../../components/datatablevehicule/Datatablevehicule';
 import img1 from './photo.jpg';
 import './photo.jpg';
+import {Link} from "react-router-dom"
 const Singlevehicule = () => {
   return (
     <div className='singlevehicule'>
     <Sidebar/>
      <div className='singlevehiculeContainer'>
        <Navbar/>
+       <div className='espace'>
+       <th>
+      <Link to="/vehicules" 
+    style={{textDecoration:"none"}}
+    className='link'>
+     Back
+    </Link>
+      </th>
+   
+    </div>
         <div className="top">
           <div className="left">
+          <Link to="/vehicules" 
+          style={{textDecoration:"none"}}
+          className='link'>
             <div className="editButton">Edit</div>
+            </Link>
            <h1 className="title">Information</h1>
            <div className="item">
             <img src={img1}

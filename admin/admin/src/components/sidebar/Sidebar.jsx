@@ -42,7 +42,7 @@ const Sidebar = () => {
     <div className='sidebar'>
       
     <div className="top" >
-      <Link to="/">
+      <Link to="/home">
       <span className='logo' >
       <img  src={img}
            alt=""
@@ -57,7 +57,7 @@ const Sidebar = () => {
       <ul>
       <AccordionSummary>
            <li>
-           <Link to='/' style={{textDecoration:"none"}}>
+           <Link to='/home' style={{textDecoration:"none"}}>
             <DashboardIcon className='icon'/>
               <span> Dashboard</span>
             </Link> 
@@ -65,7 +65,7 @@ const Sidebar = () => {
            </AccordionSummary>
 
      
-     <Accordion  >
+     <Accordion   className='Accordion'>
         <AccordionSummary
           expandIcon={<ExpandMoreIcon />}
           aria-controls="panel1a-content"
@@ -82,20 +82,30 @@ const Sidebar = () => {
         <AccordionDetails>
           <Typography>
           <li>
+          <Link to ='/destination' style={{textDecoration:"none"}}>
               <EqualizerIcon className='icon'/> 
               <span> Frequent destinations</span>
+              </Link>
            </li>
+          
           <li>
+          <Link to ='/cost' style={{textDecoration:"none"}}>
             <BubbleChartIcon className='icon'/>
             <span> Variation in theoretical and real prices</span>
+            </Link>
            </li>
           <li> 
+            <Link to ='/comminuty' style={{textDecoration:"none"}}>
             <Diversity3Icon className='icon' />
             <span>Target customer community </span>
+            </Link>
           </li> 
           <li> 
+          <Link to ='/taxi' style={{textDecoration:"none"}}>
+           
             <DepartureBoardIcon className='icon' />
             <span>Taxi availability  </span>
+            </Link>
           </li>  
           <li> 
             <SignalCellularAltIcon className='icon' />
@@ -111,7 +121,7 @@ const Sidebar = () => {
 
        
           
-          <Accordion>
+          <Accordion className='Accordion'>
            
         <AccordionSummary
           expandIcon={<ExpandMoreIcon />}
@@ -155,7 +165,7 @@ const Sidebar = () => {
           
           
          
-         <Accordion>
+         <Accordion className='Accordion'>
         <AccordionSummary
           expandIcon={<ExpandMoreIcon />}
           aria-controls="panel1a-content"
@@ -192,7 +202,7 @@ const Sidebar = () => {
 
       
       
-      <Accordion>
+      <Accordion className='Accordion'>
         <AccordionSummary
           expandIcon={<ExpandMoreIcon />}
          aria-controls="panel2a-content"
@@ -214,7 +224,7 @@ const Sidebar = () => {
             </Link>  
            </li>
            <li>
-           <Link to='/clients' style={{textDecoration:"none"}}>
+           <Link to='/blockeds' style={{textDecoration:"none"}}>
              <BlockIcon className='icon'/>
                 <span> Bloked clients   </span>
              </Link>   
@@ -224,7 +234,7 @@ const Sidebar = () => {
       </Accordion>
 
        
-      <Accordion>
+      <Accordion className='Accordion'>
         <AccordionSummary
           expandIcon={<ExpandMoreIcon />}
           aria-controls="panel1a-content"
@@ -253,7 +263,7 @@ const Sidebar = () => {
         </AccordionDetails>
       </Accordion>
 
-      <Accordion>
+      <Accordion className='Accordion'>
         <AccordionSummary
           expandIcon={<ExpandMoreIcon />}
           aria-controls="panel1a-content"
@@ -342,7 +352,7 @@ const Sidebar = () => {
            </li>
            </AccordionSummary>
            <AccordionSummary>
-           <Link to='/Login' style={{textDecoration:"none"}} >
+           <Link to='/' style={{textDecoration:"none"}} >
         
           <li> 
             <InputIcon className='icon' />
