@@ -25,11 +25,13 @@ const driver_details= async (req,res)=>{
 //Add new driver
 const driver_create= async (req,res)=>{
     const driver =new Driver({
+        id:req.body.id,
         firstname:req.body.firstname,
         lastname : req.body.lastname,
         phone : req.body.phone,
         documents : req.body.documents,
-        id_vehicule : req.body.id_vehicule,
+        vehiculeId : req.body.vehiculeId,
+        status : req.body.status,
     });
         try{
             const savedDriver = await driver.save();
@@ -44,11 +46,13 @@ const driver_create= async (req,res)=>{
 const driver_update= async (req,res)=>{
     try{
     const driver = {
+        id : req.body.id,
         firstname:req.body.firstname,
         lastname : req.body.lastname,
         phone : req.body.phone,
         documents : req.body.documents,
-        id_vehicule : req.body.id_vehicule,
+        vehiculeId : req.body.vehiculeId,
+        status : req.body.status,
     };
    
         const updateDriver = await Driver.findByIdAndUpdate(

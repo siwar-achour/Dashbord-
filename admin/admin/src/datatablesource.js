@@ -1,109 +1,18 @@
-/*{
-import {useEffect } from 'react';
-import axios from "axios";
-const[drivers,setDrivers]=useState([]);
-  useEffect(()=>{
-    const getDrivers = async()=>{
-      try{
-        const res= await axios.get('/drivers');
-        setDrivers(res.data)
-      }catch(err){
-        console.log(err)
-      }
-    };
-    getDrivers ()
-  },[])
-
-}*/
 
 
-export const userColumns = [
-    { field: 'id', headerName: 'ID', width: 100 },
-    {
-      field: 'firstName',
-      headerName: 'First name',
-      width: 200,
-      renderCell:(params) =>{
-        return (
-          <div className="cellWithTable">
-          <span>{params.row.firstName}</span>
-       
-          </div>
-        );
-      },
-    },
-   
-    {
-      field: 'lastName',
-      headerName: 'Last name',
-      width: 200,
-      renderCell:(params) =>{
-        return (
-          <div className="cellWithTable">
-         
-          <p>{params.row.lastName}</p>
-          </div>
-        );
-      },
-    },
 
-    {
-      field: 'Age',
-      headerName: 'Age',
-      width: 130,
-      renderCell:(params) =>{
-        return (
-          <div className="cellWithTable">
-         
-          <p>{params.row.age}</p>
-          </div>
-        );
-      },
-      
-
-    },
-    {
-      field: 'Mail',
-      headerName: 'Mail',
-      width: 230,
-      renderCell:(params) =>{
-        return (
-          <div className="cellWithTable">
-         
-          <p>{params.row.email}</p>
-          </div>
-        );
-      },
-      
-
-    },
-    { 
-      field : "status",
-      headerName:"Status",
-      width:160,
-    renderCell:(params)=>{
-       return(
-         <div className={`cellWithStatus ${params.row.status}`}>
-            {params.row.status}
-         </div>
-       );
-     },
-  
-   },
-    
-  ];
 
 
 export const userRows = [
-    { id: 1, lastName: 'Snow', firstName: 'Jon', age: 35 ,email:'Snow.Jon@gmail.com', status:'active'},
-    { id: 2, lastName: 'Lannister', firstName: 'Cersei', age: 42,status:'pending' },
-    { id: 3, lastName: 'Lannister', firstName: 'Jaime', age: 45,status:'passive' },
-    { id: 4, lastName: 'Stark', firstName: 'Arya', age: 16 },
-    { id: 5, lastName: 'Targaryen', firstName: 'Daenerys', age: 52},
-    { id: 6, lastName: 'Melisandre', firstName: 30, age: 150 },
-    { id: 7, lastName: 'Clifford', firstName: 'Ferrara', age: 44 },
-    { id: 8, lastName: 'Frances', firstName: 'Rossini', age: 36 },
-    { id: 9, lastName: 'Roxie', firstName: 'Harvey', age: 65 },
+    { id: 1, lastname: 'Snow', firstname: 'Jon', age: 35 ,email:'Snow.Jon@gmail.com', status:'active'},
+    { id: 2, lastname: 'Lannister', firstname: 'Cersei', age: 42,status:'pending' },
+    { id: 3, lastname: 'Lannister', firstname: 'Jaime', age: 45,status:'passive' },
+    { id: 4, lastname: 'Stark', firstname: 'Arya', age: 16 },
+    { id: 5, lastname: 'Targaryen', firstname: 'Daenerys', age: 52},
+    { id: 6, lastname: 'Melisandre', firstname: 30, age: 150 },
+    { id: 7, lastname: 'Clifford', firstname: 'Ferrara', age: 44 },
+    { id: 8, lastname: 'Frances', firstname: 'Rossini', age: 36 },
+    { id: 9, lastname: 'Roxie', firstname: 'Harvey', age: 65 },
   ];
   export const rideColumns = [
     { field: 'id', headerName: 'ID', width: 95 },

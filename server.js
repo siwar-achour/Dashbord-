@@ -7,7 +7,7 @@ const cors = require("cors");
 
 app.use(cors(
   {
-    origin:"http://localhost:3000"
+    origin:"http://localhost:3010"
   }
 ));
 
@@ -33,15 +33,20 @@ const driverRoutes = require("./routes/drivers");
 const vehiculeRoutes = require("./routes/vehicule");
 const pinRoutes = require("./routes/pins");
 const rideinactifRoutes = require("./routes/rideinactifs");
+const clientRoutes = require("./routes/clients");
+const rideRoutes = require("./routes/rides");
+
 //Middlewares
 app.use(express.json());
 app.use(cors());
 // route middlewares
 app.use("/api/products", productRoutes);
+app.use("/api/clients", clientRoutes);
 app.use("/api/drivers", driverRoutes);
 app.use("/api/vehicules", vehiculeRoutes);
 app.use("/api/pins", pinRoutes);
 app.use("/api/rideinactifs", rideinactifRoutes);
+app.use("/api/rides", rideRoutes);
 //
 app.use('/user',UserRouter)
 

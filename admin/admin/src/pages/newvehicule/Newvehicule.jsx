@@ -13,6 +13,7 @@ const Newvehicule = ({inputs,title}) => {
       <Sidebar/>
       <div className="newvehiculeContainer">
         <Navbar/>
+        
       <div className="top">
           <h1>{title}</h1>
       </div>

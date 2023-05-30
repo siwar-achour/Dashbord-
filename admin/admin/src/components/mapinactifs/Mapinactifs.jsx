@@ -14,9 +14,9 @@ import './mapinactifs.scss';
     borderRadius:"8px",
     border:"2px solid transparent",
     projection:"globe",
-    lat : 35.52469159635259,
-    long:11.038349313917042,
-   // zoom:6
+    latitude: 33.8869, // Latitude centrée sur la Tunisie
+    longitude: 9.5375, // Longitude centrée sur la Tunisie
+    zoom:6
   
  })
 // Set marker options.

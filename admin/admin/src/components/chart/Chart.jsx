@@ -21,8 +21,8 @@ const Chart = ({aspect , title}) => {
   margin={{ top: 10, right: 30, left: 0, bottom: 0 }}>
   <defs>
     <linearGradient id="total" x1="0" y1="0" x2="0" y2="1">
-      <stop offset="5%" stopColor="#8884d8" stopOpacity={0.8}/>
-      <stop offset="95%" stopColor="#8884d8" stopOpacity={0}/>
+      <stop offset="5%" stopColor="#12B9BA" stopOpacity={0.8}/>
+      <stop offset="95%" stopColor="#12B9BA" stopOpacity={0}/>
     </linearGradient>
   
   </defs>
@@ -30,7 +30,7 @@ const Chart = ({aspect , title}) => {
   <YAxis stroke='gray' />
   <CartesianGrid strokeDasharray="3 3" className='chartGrid'/>
   <Tooltip />
-  <Area type="monotone" dataKey="Total" stroke="#8884d8" fillOpacity={1} fill="url(#total)" />
+  <Area type="monotone" dataKey="Total" stroke="#12B9BA" fillOpacity={1} fill="url(#total)" />
  </AreaChart> 
  </ResponsiveContainer>
 
