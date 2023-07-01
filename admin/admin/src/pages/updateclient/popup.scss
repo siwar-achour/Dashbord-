@@ -1,0 +1,32 @@
+.popup-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .popup-content {
+    background-color: #fff;
+    padding: 20px;
+    padding-top: 150px;
+    border-radius: 5px;
+    text-align: center;
+    width: 500px;
+    height: 200px;
+  }
+  
+  .close-button {
+    background-color: #ff6900;
+    color: #fff;
+    border: none;
+    padding-top: 150px;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 20px;
+  }

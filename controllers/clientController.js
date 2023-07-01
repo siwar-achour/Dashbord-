@@ -52,6 +52,7 @@ const client_update= async (req,res)=>{
         firstname:req.body.firstname,
         lastname : req.body.lastname,
         email : req.body.email,
+        age:req.body.age,
         status: req.body.status,
        
     };

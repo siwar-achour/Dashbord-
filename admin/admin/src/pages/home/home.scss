@@ -3,17 +3,26 @@
     display: flex;
     .homeContainer{ 
        
-        flex: 6;
+        flex: 7;
 
-        .widgets , .charts{
+        .widgets {
             display: flex;
             padding: 20px;
             //align-items: center;
             margin-left: 3px;
             gap: 20px;
+            
         }
         .charts{
+            display: flex;
+            padding: 50px;
+        
+            margin-left: 3px;
+            gap: 20px;
             padding: 5px 20px;
+            .results{
+                
+            }
         }
         .listContainer{
             -webkit-box-shadow: 2px 2px 10px 1px rgba(0,0,0,0.47);

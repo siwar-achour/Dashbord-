@@ -1,14 +1,14 @@
 .listtaxi{
     display: flex;
-    width: 100%;
+    width: 1550px;
     
     .listcomminutyContainer{
         flex: 6;
        
        form{
-        padding: 15px;
-        padding-left: 80px;
-       
+        padding: 10px;
+        padding-left: 40px;
+      
    .static1{
        
     color: gray;
@@ -30,9 +30,11 @@
         }
        }
       
-    
+       .bar{
+        padding-left: 90px;
+       }
 
     }
-
+   
 }
   

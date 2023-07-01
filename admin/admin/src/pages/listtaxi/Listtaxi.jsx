@@ -3,6 +3,7 @@ import Sidebar from "../../components/sidebar/Sidebar"
 import Navbar from "../../components/navbar/Navbar";
 import Charttaxi from "../../components/charttaxi/Charttaxi"
 import Linetaxi from "../../components/linetaxi/Linetaxi"
+import Bartaxi from "../../components/linetaxi/Bartaxi"
 
 //import Maps from "../../components/maps/Maps";
 const Listtaxi = () => {
@@ -22,8 +23,11 @@ const Listtaxi = () => {
            <div className="com">
              <Linetaxi />
            </div>
+        
          </div>
        </form>  
+       <form className="bar"><Bartaxi/></form>
+       
       </div>
       </div>
   )

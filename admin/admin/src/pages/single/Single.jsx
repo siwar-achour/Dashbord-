@@ -47,10 +47,7 @@ const Single = () => {
           </div>
         
         </div>
-        <div className="bottom">
-        <h1 className="title">Last transactions</h1>
-        <List/>
-          </div>
+       
 
      </div>
 

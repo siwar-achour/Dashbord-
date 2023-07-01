@@ -1,54 +1,61 @@
-.app.dark{
+.app.dark {
+   
     background-color: #222;
-    stroke:rgba(228,228,228,0.219);
-    .table{
+    stroke: rgba(228, 228, 228, 0.219);
+    
+    .table {
         background-color: #111;
-        .tableCell{
+        
+        .tableCell {
             color: gray;
         }
     }
-    .navbar{
+       .navbar {
         color: #999;
         border-color: #333;
 
-        .search{
+        .search {
             border-color: gray;
         }
     }
-    .sidebar{
+    
+    .sidebar {
+
+       
         .Accordion {
             background-color: #222;
-          }
-          
         }
-    hr{
-         
-      border-color: gray;
     }
-    ul{ 
-        li{  background-color: #222;
-            border-color: #333;
-            &:hover{
+    
+    hr {
+        border-color: gray;
+    }
+    
+    ul {
+        li {
+            &:hover {
                 background-color: #333;
             }
-            .icon{
-                color:#999;
+            
+            .icon {
+                color: #999;
             }
         }
     }
    
-   
-    .datatable{
+    .datatable {
+        .datagrid {
+            color: gray;
+            background-color: rgba(219, 216, 216, 0.5);
+            border: none;
+        }
         
-        .datagrid{
+        .rows,
+        .disableSelectionOnClick,
+        .checkboxSelection,
+        .cellWithstatus {
             color: gray;
             border: none;
         }
-        .rows , .disableSelectionOnClick,.checkboxSelection,.cellWithstatus{
-            color :gray;
-            border: none;
-
-        }
     }
-
 }

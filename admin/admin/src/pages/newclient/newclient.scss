@@ -1,0 +1,101 @@
+.newclient {
+    display: flex;
+    .newclientContainer{ 
+       
+        flex: 6;
+        
+        .top{
+            -webkit-box-shadow: 2px 2px 10px 1px rgba(0,0,0,0.47);
+            -moz-box-shadow: 2px 4px 10px 1px rgba(201,201,201,0.47);
+            border-radius: 5px;
+            display: flex;
+            width: 670px;
+            font-size: 15px;
+            color: gray;
+  
+        
+            align-items: center ;
+            justify-content: space-between;
+                .link{
+                    text-decoration: none;
+                    color: green;
+                    font-size: 16px;
+                    font-weight: 400;
+                    border: 1px solid green;
+                    padding: 5px;
+                    border-radius: 5px;
+                    cursor: pointer;
+                }
+           } 
+        .containerclient{
+            padding-left: 300px;
+             
+       .bottom{
+        padding: 10px;
+        margin: 20px;
+        width: 650px;
+        -webkit-box-shadow: 2px 2px 10px 1px rgba(0,0,0,0.47);
+        -moz-box-shadow: 2px 4px 10px 1px rgba(201,201,201,0.47);
+        display: flex;
+       
+        form{
+        
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            justify-content: space-around;
+
+            .formInput{
+                width: 40%;
+                
+                label{
+                display: flex;
+                align-items: center;
+                gap: 30px;
+                color:rgb(39, 37, 37);
+                text-decoration: none;
+
+                    .icon{
+                        cursor: pointer;
+                    }
+                 }
+                input{
+                    width: 100%;
+                    padding: 6px;
+                    border: 1px solid lightgray;
+                    border-radius: 1px solid gray;
+
+                }
+            }
+            button{
+              width:150px ; 
+              padding: 10px;
+              border: none;
+              background-color: teal; 
+              color: white;
+              font-weight: bold;
+              cursor: pointer;
+              margin-top: 10px;
+            }
+        }
+    
+    
+    
+    
+    
+    
+    
+    
+    }
+
+
+
+
+
+
+            }}}
+
+
+
+
+            

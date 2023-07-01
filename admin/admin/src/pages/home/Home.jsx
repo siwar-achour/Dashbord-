@@ -1,8 +1,8 @@
 import Sidebar from "../../components/sidebar/Sidebar"
 import Navbar from "../../components/navbar/Navbar";
 import Widget from "../../components/widget/Widget";
-import Chart from "../../components/chart/Chart";
-import Featured from "../../components/featured/Featured";
+import Chartresult from "../../components/charttheorical/Chartresult";
+import Chartcomminuty from "../../components/chartcomminuty/Chartcomminuty";
 import Table from "../../components/table/Table";
 import "./home.scss";
 
@@ -20,15 +20,12 @@ const Home = () => {
       <Widget type="balance"/>
     </div>
     <div className="charts">
-      <Featured/>
-      <Chart title="Last 6 Months(Revenue)" aspect={2 / 1}/>
-    </div>
-    <div className="listContainer">
-      <div className="listTitle">
-        Latest Transactions
-        <Table/>
-      </div>
-    </div>
+      <Chartcomminuty/>
+     
+      <Chartresult aspect={1/ 1} />
+
+        </div>
+    
     </div>
     </div>
     

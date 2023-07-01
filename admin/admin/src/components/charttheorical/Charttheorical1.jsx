@@ -47,11 +47,11 @@ const Charttheorical1= ({ aspect, title }) => {
   };
 
   return (
-    <div className="Chartprice2">
+    <div className="Charttheorical1">
       <div className="title">Chart of Theoretical Prices</div>
 
       <ResponsiveContainer className="barChart" width="100%" height="100%" aspect={aspect}>
-        <BarChart data={data} margin={{ top: 5, right: 30, left: 0, bottom: 10 }}>
+        <BarChart data={data} margin={{ top: 0, right: 20, left: -5, bottom: 40 }}>
           <CartesianGrid strokeDasharray="3 3" />
           <XAxis dataKey="name" stroke="gray" label={{  position: 'insideBottom', offset: -10 }} />
           <YAxis stroke="gray" label={{ value: 'Theoretical Price', angle: -90, position: 'insideLeft', offset: -10 }} />

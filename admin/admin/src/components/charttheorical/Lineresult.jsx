@@ -25,13 +25,13 @@ const Lineresult= ({ aspect, title }) => {
           const name = ride.name;
 
           if (nameData[name]) {
-            nameData[name].variation = theoreticalPrice - cost;
+            nameData[name].variation =cost- theoreticalPrice ;
           } else {
             nameData[name] = {
               cost: cost,
               theoretical_price: theoreticalPrice,
               name: name,
-              variation: theoreticalPrice - cost,
+              variation: cost - theoreticalPrice ,
             };
           }
         });
@@ -47,14 +47,14 @@ const Lineresult= ({ aspect, title }) => {
   };
 
   return (
-    <div className="Chartresult">
-      <div className="title">{title}</div>
+    <div className="lineresult">
+      <div className="title">Variation in theorical and real prices Line</div>
 
       <ResponsiveContainer className="area" width="100%" aspect={aspect}>
-        <AreaChart data={data} margin={{ top: 10, right: 30, left: 0, bottom: 0 }}>
+        <AreaChart data={data} margin={{ top: 50, right: 30, left: -30, bottom: 88 }}>
         <defs>
     <linearGradient id="total" x1="0" y1="0" x2="0" y2="1">
-      <stop offset="5%" stopColor="#029FA0" stopOpacity={0.8}/>
+      <stop offset="50%" stopColor="#029FA0" stopOpacity={0.8}/>
       <stop offset="95%" stopColor="#029FA0" stopOpacity={0}/>
     </linearGradient>
   

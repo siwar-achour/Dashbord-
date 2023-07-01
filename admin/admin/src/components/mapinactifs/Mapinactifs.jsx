@@ -1,7 +1,7 @@
 import "mapbox-gl/dist/mapbox-gl.css"
 import Map, { Popup,FullscreenControl,GeolocateControl, Marker, NavigationControl } from "react-map-gl";
 import React, {useEffect, useState} from 'react';
-import RoomIcon from '@mui/icons-material/Room';
+import LocalTaxiIcon from '@mui/icons-material/LocalTaxi';
 import StarIcon from '@mui/icons-material/Star';
 import axios from "axios";
 import './mapinactifs.scss';
@@ -14,9 +14,9 @@ import './mapinactifs.scss';
     borderRadius:"8px",
     border:"2px solid transparent",
     projection:"globe",
-    latitude: 33.8869, // Latitude centrée sur la Tunisie
-    longitude: 9.5375, // Longitude centrée sur la Tunisie
-    zoom:6
+    latitude: 36.8548740504756, // Latitude centrée sur la Tunisie
+    longitude: 10.03845387722022, // Longitude centrée sur la Tunisie
+   zoom:10
   
  })
 // Set marker options.
@@ -54,7 +54,7 @@ useEffect(()=>{
        
        >
        
-       <RoomIcon style={{fontSize:viewport.zoom*4, color:"red"}} />
+       <LocalTaxiIcon style={{fontSize:viewport.zoom*4, color:"red"}} />
       </Marker>
       
       <Popup 

@@ -43,6 +43,7 @@ const navigate=useNavigate();
       console.log("Message:", data.message);
       alert("Login Failed");
       // Autres actions à effectuer en cas d'échec de connexion
+    
     }
     
   }
@@ -72,7 +73,7 @@ return (
           <tbody>
             <tr>
        
-               <th><input type="email" placeholder="    Your Email" 
+               <th><input type="email" placeholder=" Your Email" 
                id="email"
                className="name" name="email" 
                 value={email}

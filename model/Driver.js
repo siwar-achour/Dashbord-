@@ -25,9 +25,14 @@ const driverSchema = new mongoose.Schema({
         unique:true,
        
     },
+    date:{
+        type:Date,
+        required:true
+    },
     status:{
         type:Boolean
-    }
+    },
+   
    
 
 });

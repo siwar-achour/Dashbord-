@@ -31,7 +31,9 @@ const driver_create= async (req,res)=>{
         phone : req.body.phone,
         documents : req.body.documents,
         vehiculeId : req.body.vehiculeId,
+        date:req.body.date,
         status : req.body.status,
+       
     });
         try{
             const savedDriver = await driver.save();
@@ -52,7 +54,9 @@ const driver_update= async (req,res)=>{
         phone : req.body.phone,
         documents : req.body.documents,
         vehiculeId : req.body.vehiculeId,
+        date:req.body.date,
         status : req.body.status,
+
     };
    
         const updateDriver = await Driver.findByIdAndUpdate(
