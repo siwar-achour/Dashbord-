@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
-import { BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer, Cell, LabelList } from 'recharts';
+import { BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer, Cell } from 'recharts';
 import './charttheorical.scss';
 
 const Charttheorical = ({ aspect, title }) => {
@@ -54,7 +54,6 @@ const Charttheorical = ({ aspect, title }) => {
           <YAxis stroke="gray" />
           <Tooltip />
           <Bar dataKey="Count">
-            <LabelList dataKey="Count" position="top" />
             {data.map((entry, index) => (
               <Cell key={`cell-${index}`} fill={`url(#gradient-${index})`} />
             ))}

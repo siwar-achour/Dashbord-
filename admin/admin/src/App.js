@@ -1,10 +1,11 @@
 import Home  from "./pages/home/Home";
 import Login  from "./pages/login/Login";
 import List  from "./pages/list/List";
-import New from "./pages/new/New";
+import Newclient from "./pages/newclient/Newclient";
 import Document from "./components/document/Document";
 import Single from "./pages/single/Single";
 import Mapview from "./pages/mapview/Mapview";
+import Mapviewactif from "./pages/mapviewactif/Mapviewactif";
 import Mapviewinactif from "./pages/mapviewinactif/Mapviewinactif";
 //import Document from "./components/document/Document";
 import "./style/dark.scss"
@@ -31,7 +32,11 @@ import Listcode from "./pages/listcode/Listcode";
 import Listtaxi from "./pages/listtaxi/Listtaxi";
 import Listblocked from "./pages/listblocked/Listblocked";
 import Listdestination from './pages/listdestination/Listdestination';
+import Listclientblock from './pages/listclientblock/Listclientblock';
 import Listprice from './pages/listprice/Listprice';
+import Profile from './pages/profile/Profile';
+
+import Update from "./pages/updateclient/Update";
 //import Listride from "../../components/tableride/Tableride";
 //require('leaflet/dist/leaflet.css');
 function App() {
@@ -50,8 +55,11 @@ function App() {
               <Route index element={<List />}/>
               <Route path=":ClientId" element={<Single/>} />
               <Route path="test" element={<Single/>} />
-              <Route path="new" element={<New inputs={ClientInputs} title="Add New Client"/>} />
+              <Route path="viewclient" element={<Newclient inputs={ClientInputs} title="Add New Client"/>} />
+               
+              <Route path="update/:clientId" element={<Update inputs={ClientInputs}  title="Update Client"/>} />
 
+         
           </Route>
           <Route path="blockeds">
               <Route index element={<Listblocked/>}/>
@@ -61,6 +69,7 @@ function App() {
          </Route>
 
           <Route path="maps" element={<Mapview/>}/>
+          <Route path="mapactifs" element={<Mapviewactif/>}/>
           <Route path="mapinactifs" element={<Mapviewinactif/>}/>
           <Route path="documents" element={<Document/>}/>
           <Route path="upload" element={<Upload/>}/>
@@ -68,7 +77,8 @@ function App() {
            <Route path="taxi" element={<Listtaxi/>}/>
            <Route path="destination" element={<Listdestination/>}/>
            <Route path="cost" element={<Listprice/>}/>
-         
+           <Route path="profile" element={<Profile/>}/>
+           <Route path="clientblock" element={<Listclientblock/>}/>
           
           <Route path="drivers">
               <Route index element={<Listdriver/>}/>
@@ -82,7 +92,7 @@ function App() {
               <Route index element={<Listride/>}/>
               <Route path=":RideId" element={<Singleride/>} />
               <Route path="test" element={<Singleride/>} />
-              <Route path="newride" element={<Newride inputs={rideInputs} title="Add New Ride"/>} />
+              <Route path="newrides" element={<Newride inputs={rideInputs} title="Add New Ride"/>} />
           </Route>
 
 
@@ -113,6 +123,9 @@ function App() {
               <Route path="newvehicule" element={<Newvehicule inputs={vehiculeInputs} title="Add New Vehicule"/>} />
           </Route>
           </Route>
+
+        
+         
         </Routes>
       
     </BrowserRouter>

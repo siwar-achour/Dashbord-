@@ -3,7 +3,7 @@ import Sidebar from "../../components/sidebar/Sidebar"
 import Navbar from "../../components/navbar/Navbar";
 import './R.png';
 import img1 from './R.png';
-import { useState } from 'react';
+import { useState,Link } from 'react';
 import DriveFolderUploadOutlinedIcon from '@mui/icons-material/DriveFolderUpload';
 const New = ({inputs,title}) => {
   const [file , setFile] =useState("");
@@ -14,6 +14,11 @@ const New = ({inputs,title}) => {
       <div className="newContainer">
         <Navbar/>
       <div className="top">
+      <Link to="/home" 
+    style={{textDecoration:"none"}}
+    className='link'>
+     Back
+    </Link>
           <h1>{title}</h1>
       </div>
       <div className="bottom">

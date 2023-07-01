@@ -14,32 +14,36 @@ const Linecomminuty = ({ aspect, title }) => {
     try {
       const response = await axios.get('/clients');
       const clientData = response.data;
-
+  
       if (clientData.length > 0) {
         const ageCounts = {};
-
-        // Calculate the occurrence count for each age
+  
+        // Calculate the occurrence count for each non-null age
         clientData.forEach((client) => {
-          const age = client.age.toString();
-          if (ageCounts[age]) {
-            ageCounts[age]++;
-          } else {
-            ageCounts[age] = 1;
+          const age = client.age;
+          if (age !== null) {
+            const ageString = age.toString();
+            if (ageCounts[ageString]) {
+              ageCounts[ageString]++;
+            } else {
+              ageCounts[ageString] = 1;
+            }
           }
         });
-
+  
         // Prepare the data in the required format for the chart
         const chartData = Object.entries(ageCounts).map(([age, count]) => ({
           age,
           Count: count,
         }));
-
+  
         setData(chartData);
       }
     } catch (error) {
       console.log(error);
     }
   };
+  
 
   return (
     <div className="Chartcomminuty">

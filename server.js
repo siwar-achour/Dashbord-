@@ -4,10 +4,10 @@ const app = express();
 const server = http.createServer(app);
 const cors = require("cors");
 
-
+app.use(cors());
 app.use(cors(
   {
-    origin:"http://localhost:3010"
+    origin:"http://localhost:3000"
   }
 ));
 
@@ -35,6 +35,7 @@ const pinRoutes = require("./routes/pins");
 const rideinactifRoutes = require("./routes/rideinactifs");
 const clientRoutes = require("./routes/clients");
 const rideRoutes = require("./routes/rides");
+const promoRoutes = require("./routes/promos");
 
 //Middlewares
 app.use(express.json());
@@ -47,6 +48,7 @@ app.use("/api/vehicules", vehiculeRoutes);
 app.use("/api/pins", pinRoutes);
 app.use("/api/rideinactifs", rideinactifRoutes);
 app.use("/api/rides", rideRoutes);
+app.use("/api/promos", promoRoutes);
 //
 app.use('/user',UserRouter)
 

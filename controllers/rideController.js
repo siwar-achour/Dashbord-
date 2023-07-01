@@ -12,7 +12,7 @@ const ride_create = async (req, res) => {
     cost: req.body.cost,
     date: req.body.date,
     time: req.body.time,
-    vehicleId: req.body.vehicleId,
+  
     pickAddress: req.body.pickAddress,
     dropAddress: req.body.dropAddress
   });

@@ -65,7 +65,7 @@ const Sidebar = () => {
            </AccordionSummary>
 
      
-     <Accordion   className='Accordion'>
+     <Accordion   className='Accordion' style={{ backgroundColor: 'transparent',border: 'none'  }}>
         <AccordionSummary
           expandIcon={<ExpandMoreIcon />}
           aria-controls="panel1a-content"
@@ -121,7 +121,7 @@ const Sidebar = () => {
 
        
           
-          <Accordion className='Accordion'>
+          <Accordion className='Accordion' style={{ backgroundColor: 'transparent' }}>
            
         <AccordionSummary
           expandIcon={<ExpandMoreIcon />}
@@ -147,7 +147,7 @@ const Sidebar = () => {
                 </Link>
            </li>
            <li>
-           <Link to ='/maps' style={{textDecoration:"none"}}>
+           <Link to ='/mapactifs' style={{textDecoration:"none"}}>
              <RoomIcon className='icon'/>
                 <span> View of the driver card</span>
                 </Link>
@@ -165,7 +165,7 @@ const Sidebar = () => {
           
           
          
-         <Accordion className='Accordion'>
+         <Accordion className='Accordion' style={{ backgroundColor: 'transparent' }}>
         <AccordionSummary
           expandIcon={<ExpandMoreIcon />}
           aria-controls="panel1a-content"
@@ -181,18 +181,18 @@ const Sidebar = () => {
           <Typography>
               <li>
             <Link to='/drivers' style={{textDecoration:"none"}}>
-            <ThumbUpAltIcon className='icon' sx ={onclick=>{navigate("/users")}} />
+            <ThumbUpAltIcon className='icon'  />
             <i> <span> Online drivers </span></i>
             </Link>
              </li>
               <li> 
               <Link to='/products' style={{textDecoration:"none"}}>
-             <CheckIcon className='icon' sx ={onclick=>{navigate("/users")}} />
+             <CheckIcon className='icon'  />
             <i> <span> Approved drivers </span></i>
             </Link>
              </li>
              <li> 
-            <WarningIcon className='icon' sx ={onclick=>{navigate("/users")}} />
+            <WarningIcon className='icon' />
             <i> <span> Unapproved drivers </span></i>
             </li>
           </Typography>
@@ -202,7 +202,7 @@ const Sidebar = () => {
 
       
       
-      <Accordion className='Accordion'>
+      <Accordion className='Accordion' style={{ backgroundColor: 'transparent' }}>
         <AccordionSummary
           expandIcon={<ExpandMoreIcon />}
          aria-controls="panel2a-content"
@@ -224,7 +224,7 @@ const Sidebar = () => {
             </Link>  
            </li>
            <li>
-           <Link to='/blockeds' style={{textDecoration:"none"}}>
+           <Link to='/clientblock' style={{textDecoration:"none"}}>
              <BlockIcon className='icon'/>
                 <span> Bloked clients   </span>
              </Link>   
@@ -234,7 +234,7 @@ const Sidebar = () => {
       </Accordion>
 
        
-      <Accordion className='Accordion'>
+      <Accordion className='Accordion' style={{ backgroundColor: 'transparent' }}>
         <AccordionSummary
           expandIcon={<ExpandMoreIcon />}
           aria-controls="panel1a-content"
@@ -251,19 +251,19 @@ const Sidebar = () => {
            
               <li> 
               <Link to='/earnings' style={{textDecoration:"none"}}>
-             <PaidIcon className='icon' sx ={onclick=>{navigate("/users")}} />
+             <PaidIcon className='icon' />
             <i> <span>  drivers payment reports </span></i>
             </Link>
              </li>
              <li> 
-            <AttachMoneyIcon className='icon' sx ={onclick=>{navigate("/users")}} />
+            <AttachMoneyIcon className='icon'  />
             <i> <span> admin payment reports </span></i>
             </li>
           </Typography>
         </AccordionDetails>
       </Accordion>
 
-      <Accordion className='Accordion'>
+      <Accordion className='Accordion' style={{ backgroundColor: 'transparent' }}>
         <AccordionSummary
           expandIcon={<ExpandMoreIcon />}
           aria-controls="panel1a-content"
@@ -280,12 +280,12 @@ const Sidebar = () => {
            
               <li> 
               <Link to='/products' style={{textDecoration:"none"}}>
-             <PaidIcon className='icon' sx ={onclick=>{navigate("/users")}} />
+             <PaidIcon className='icon'/>
             <i> <span> Rider rating </span></i>
             </Link>
              </li>
              <li> 
-            <AttachMoneyIcon className='icon' sx ={onclick=>{navigate("/users")}} />
+            <AttachMoneyIcon className='icon'  />
             <i> <span> Driver rating</span></i>
             </li>
           </Typography>
@@ -347,14 +347,17 @@ const Sidebar = () => {
      
            <AccordionSummary>
           <li>
+          <Link to='/profile' style={{textDecoration:"none"}} >
             <AccountBoxIcon className='icon'/>
             <span> Profil</span>
+            </Link>
            </li>
            </AccordionSummary>
+          
+          
            <AccordionSummary>
            <Link to='/' style={{textDecoration:"none"}} >
-        
-          <li> 
+           <li> 
             <InputIcon className='icon' />
             <span> Log Out</span>
           </li>
@@ -365,10 +368,7 @@ const Sidebar = () => {
 
     </div> 
     
-    <div className="bottom"> 
-         <div className="colorOption"></div>
-         <div className="colorOption"></div>
-          </div>
+  
     
   </div>
   )

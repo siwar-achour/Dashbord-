@@ -59,14 +59,14 @@ const Datatablevehicule = () => {
     <div className='datatablevehicule' style={ {height: '90%', width: '95%'}}>
    <div className="dataTablevehiculeTitle">
     List Vehicules
-    <Link to="/" 
+    <Link to="/Home" 
     style={{textDecoration:"none"}}
     className='link'>
     Back
     </Link>
   </div>
     <div>
-      <input type='text' onChange={handleFilter} placeholder='Search' ></input>
+      <input type='text' onChange={handleFilter} placeholder='Search'  style={{ backgroundColor: 'transparent' }}></input>
     </div>
     
   <DataGrid

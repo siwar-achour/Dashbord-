@@ -1,6 +1,7 @@
 .datatabledriver{
     height: 600px;
     padding: 20px;
+   
     .datagrid {
         .active {
             color: green;
@@ -15,11 +16,12 @@
    .dataTabledriverTitle{
     width: 100%;
     font-size: 24px;
-    color: gray;
+    color: rgb(21, 19, 19);
     margin-bottom: 10px;
     display: flex;
     align-items: center ;
     justify-content: space-between;
+    
         .link{
             text-decoration: none;
             color: green;
@@ -29,6 +31,7 @@
             padding: 5px;
             border-radius: 5px;
             cursor: pointer;
+            
         }
    } 
     
@@ -60,9 +63,11 @@
     
     height: 100px;
     display: flex;
+
    // gap: 85px;
     padding-top:0px;
    ul{
+    
     display: flex;
     padding: 1px;
     padding-left: 15px;

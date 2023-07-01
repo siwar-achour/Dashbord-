@@ -47,7 +47,7 @@ const Chartprice = ({ aspect, title }) => {
       <div className="title">Chart of Occurences of Cost</div>
 
       <ResponsiveContainer className="barChart" width="100%" aspect={aspect}>
-        <BarChart data={data} margin={{ top: 10, right: 30, left: 0, bottom: 30 }}>
+        <BarChart data={data} margin={{ top: 30, right: 30, left: 0, bottom: 50 }}>
           <CartesianGrid strokeDasharray="3 3" />
           <XAxis dataKey="name" stroke="gray" />
           <YAxis stroke="gray" />

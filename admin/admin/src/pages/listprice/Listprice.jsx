@@ -20,10 +20,10 @@ const Listprice = () => {
 
         <h1 className='static1'>Statistics of Theoritical and real price</h1>
        
-        <div className="type" style={{ display: 'flex' }}>
+        <div className="type" style={{ display: 'flex' ,marginLeft:'40px', marginRight:'0px', marginTop:'40px'}}>
           <div className="price">
             <div >
-              <Chartprice style={{ marginBottom: '0px' }} />
+              <Chartprice />
             </div>
             <div className="com">
               <Chartprice2 />
@@ -33,20 +33,29 @@ const Listprice = () => {
         </div>
 
 
-        <div className="type" style={{ display: 'flex' }}>
+        <div className="type" style={{ display: 'flex',marginLeft:'40px' }}>
           <div className="price">
             <div >
-              <Charttheorical style={{ marginBottom: '0px' }} />
+              <Charttheorical style={{ marginLeft: '0px' }} />
             </div>
             <div className="com">
               <Charttheorical1 />
             </div>
           </div>
         </div>
-        <div className="result">
-        <Chartresult/>
-        <Lineresult/>
+        
+        <div className="type" style={{ display: 'flex',marginLeft:'40px' }}>
+          <div className="price">
+            <div >
+              <Chartresult style={{ marginLeft: '0px' }} />
+            </div>
+            <div className="com">
+              <Lineresult />
+            </div>
+          </div>
         </div>
+       
+      
    <div>
  
    </div>

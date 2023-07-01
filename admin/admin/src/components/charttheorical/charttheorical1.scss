@@ -1,0 +1,33 @@
+.Charttheorical1 {
+    flex: 6;
+    -webkit-box-shadow: 2px 2px 10px 1px rgba(0, 0, 0, 0.47);
+    -moz-box-shadow: 2px 4px 10px 1px rgba(201, 201, 201, 0.47);
+    border-radius: 8px;
+    justify-content: center;
+    padding: 20px;
+    color: gray;
+    width: 530px;
+    height: 560px;
+  
+    .title {
+    justify-content: center;
+    margin: auto;
+      margin-bottom: 20px;
+      display: flex;
+      font-weight: bold;
+      color: #619494;
+    }
+  
+    .chartGrid {
+      stroke: transparent;
+    }
+  
+    .recharts-bar-rectangle:nth-child(odd) {
+      fill: #12b9ba;
+    }
+  
+    .recharts-bar-rectangle:nth-child(even) {
+      fill: #ec6d0f;
+    }
+  }
+  

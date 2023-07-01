@@ -24,8 +24,8 @@ const removeFile=(filename)=>{
 console.log(files)
      return(
         <div classname="upload">
-         <div className='title'>
-         <p>  Upload File </p>
+         <div className='titleu'>
+         <p className='p1'>  Upload File </p>
          </div>
         
        <FileUpload files={files} setFiles={setFiles} removeFile={removeFile}/>

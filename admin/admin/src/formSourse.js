@@ -1,40 +1,42 @@
 export const ClientInputs =[
     {
         id:1,
-        label:"Clientname",
-        type:"text",
-        placeholder:"Siwar_Achour",
+        label:"Id",
+        type:"number",
+        placeholder:"",
     },
     {
         id:2,
-        label:"Name and surname",
+        label:"First Name",
         type:"text",
-        placeholder:"Siwar achour",
+        placeholder:"",
     },
     {
         id:3,
-        label:"Email",
-        type:"mail",
-        placeholder:"siwarachour999@gmail.com",
+        label:"Last Name",
+        type:"text",
+        placeholder:"",
     },
     {
         id:4,
-        label:"Phone",
-        type:"phone",
-        placeholder:"+216 26 986 405",
+        label:"Age",
+        type:"number",
+        placeholder:"",
     },
     {
         id:5,
-        label:"Adress",
-        type:"adress",
-        placeholder:"Avenue habib bourguiba",
+        label:"Email",
+        type:"text",
+        placeholder:"",
     },
     {
         id:6,
-        label:"Country",
-        type:"country",
-        placeholder:"Sokra",
+        label:"Status",
+        type:"boolean",
+        placeholder:"",
     },
+   
+   
 ];
 export const productInputs=[
     {
@@ -63,27 +65,53 @@ export const productInputs=[
 export const rideInputs=[
     {
         id:1,
-        label:"Ride Name",
-        type:"text",
-        placeholder:"clio",
+        label:"Id",
+        type:"number",
+        placeholder:"",
     },
     {
         id:2,
-        label:"Pick-drop adress ",
+        label:"Name",
         type:"text",
-        placeholder:"sokra-lac",
-    }, {
-        id:3,
-        label:"Date",
-        type:"text",
-        placeholder:"Client",
+        placeholder:"",
     },
-     {
-        id:4,
-        label:"Cost",
+    {
+        id:3,
+        label:"Theorical Price",
         type:"",
         placeholder:"",
     },
+    
+    {
+        id:4,
+        label:" Cost ",
+        type:"text",
+        placeholder:"",
+    },
+    {
+        id:5,
+        label:"Date ",
+        type:"text",
+        placeholder:"jj-mm-aa",
+    },
+    {
+        id:6,
+        label:"Time",
+        type:"text",
+        placeholder:"00:00:00",
+    },
+    {
+        id:7,
+        label:"Pick adress ",
+        type:"text",
+        placeholder:"Saisir adress",
+    },
+    {
+        id:8,
+        label:"Drop adress ",
+        type:"text",
+        placeholder:"Saisir adress",
+    }
     
 ];
 
@@ -93,6 +121,7 @@ export const docInputs=[
         label:"PDF",
         type:"text",
         placeholder:"Importclio",
+
     },
    
     

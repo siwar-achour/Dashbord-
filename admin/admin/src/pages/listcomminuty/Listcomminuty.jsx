@@ -3,10 +3,11 @@ import Sidebar from "../../components/sidebar/Sidebar"
 import Navbar from "../../components/navbar/Navbar";
 import Chartcomminuty from "../../components/chartcomminuty/Chartcomminuty"
 import Linecomminuty from "../../components/linecomminuty/Linecomminuty";
+
 //import Maps from "../../components/maps/Maps";
 const Listcomminuty = () => {
   return (
-    <div className="listcomminuty">
+    <div className="listcomminuty" >
       <Sidebar />
       <div className="listcomminutyContainer">
         <Navbar />

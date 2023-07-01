@@ -57,6 +57,24 @@ const Datatabledriver = () => {
       renderCell: (params) => <span>{params.value}</span>,
     },
     {
+      field: 'date',
+      headerName: 'Date',
+      width: 230,
+      renderCell: (params) => {
+        const date = new Date(params.value);
+        const formattedDate = date.toLocaleString('en-US', {
+          day: 'numeric',
+          month: 'numeric',
+          year: 'numeric',
+          hour: 'numeric',
+          minute: 'numeric'
+        });
+
+        return <span>{formattedDate}</span>;
+      },
+    },
+    {
+      
       field: 'status',
       headerName: 'Status',
       width: 230,
@@ -117,13 +135,10 @@ const Datatabledriver = () => {
   function handleFilter(event) {
     const newData = filterRecords.filter(row => {
       return (row.firstname.toLowerCase().includes(event.target.value.toLowerCase()) || row.lastname.toLowerCase().includes(event.target.value.toLowerCase())
-        || row.status.toLowerCase().includes(event.target.value.toLowerCase()))
+        || row.documents.toLowerCase().includes(event.target.value.toLowerCase()))
     });
     setRecords(newData)
   }
-
-
-
 
  
    
@@ -189,13 +204,13 @@ const Datatabledriver = () => {
    
   </div>
   <div>
-      <input type='text' onChange={handleFilter} placeholder='Search' ></input>
+      <input type='text' onChange={handleFilter} placeholder='Search' style={{ backgroundColor: 'transparent'}} ></input>
     </div>
   <DataGrid className='datagrid'
         rows={records}
         columns={Columns.concat(actionColumn)}
         getRowId={(row) => row.id}
-        pageSize={12}
+        pageSize={20}
         rowsPerPageOptions={[7]}
         checkboxSelection
         disableSelectionOnClick

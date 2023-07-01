@@ -4,14 +4,18 @@ import { DataGrid } from '@material-ui/data-grid';
 import axios from "axios";
 import { Link, useNavigate } from "react-router-dom";
 import { useState, useEffect } from 'react';
+import { Navigate } from 'react-router-dom';
 
 const Datatable = () => {
   const navigate = useNavigate();
   const [records, setRecords] = useState([]);
   const [filterRecords, setFilterRecords] = useState([]);
 
+  const [redirect, setRedirect] = useState(false);
 
-
+  const handleUpdateClick = (clientId ) => {
+    return <Navigate to={`/update/${clientId}`} />;
+  };
 
   const Columns = [
     {
@@ -73,15 +77,38 @@ const Datatable = () => {
     };
     getClients()
   }, [])
+  function handleDelete(clientId) {
+    // Send a DELETE request to your backend
+    axios.delete(`/clients/${clientId}`)
+      .then(res => {
+        // Update the records after deletion
+        const updatedRecords = records.filter(record => record.id !== clientId);
+        setRecords(updatedRecords);
+      })
+      .catch(err => {
+        console.log(err);
+        // Handle deletion errors
+      });
+  }
+  
 
   function handleFilter(event) {
-    const newData = filterRecords.filter(row => {
-      return (row.firstname.toLowerCase().includes(event.target.value.toLowerCase()) || row.lastname.toLowerCase().includes(event.target.value.toLowerCase())
-        || row.email.toLowerCase().includes(event.target.value.toLowerCase()))
+    const searchValue = event.target.value.toLowerCase();
+  
+    const newData = filterRecords.filter((row) => {
+      const { firstname, lastname, email } = row;
+  
+      return (
+        (firstname && firstname.toLowerCase().includes(searchValue)) ||
+        (lastname && lastname.toLowerCase().includes(searchValue)) ||
+        (email && email.toLowerCase().includes(searchValue))
+      );
     });
-    setRecords(newData)
+  
+    setRecords(newData);
   }
-
+ 
+  
 
 
 
@@ -91,26 +118,28 @@ const Datatable = () => {
       field: "action",
       headerName: "Action",
       width: 250,
-      renderCell: () => {
+      renderCell: (params) => {
         return (
           <div className='cellAction'>
             <ul>
               <i>
                 <Link to='test' style={{ textDecoration: "none" }}>
-                  <button onClick={() => navigate('new')} style={{ border: 'none', background: 'transparent', margin: '1.2em -2em auto' }}>
+                  <button style={{ border: 'none', background: 'transparent', margin: '1.2em -2em auto' }}>
                     <div className="viewButton" style={{ height: '60%' }} >    View</div>
                   </button>
                 </Link>
               </i>
               <i>
-                <button onClick={() => navigate('new')} style={{ border: 'none', background: 'transparent', margin: '1.2em -2em auto' }}>
+              <Link to={`update/${params.row._id}`} style={{ textDecoration: "none" }}>
+                <button style={{ border: 'none', background: 'transparent', margin: '1.2em -2em auto' }}>
                   <div className="updateButton" style={{ height: '60%' }} > update</div>
                 </button>
+                </Link>
               </i>
               <i>
-                <button onClick={() => navigate('new')} style={{ border: 'none', background: 'transparent', margin: '1.2em -2em auto' }}>
-                  <div className="deleteButton" style={{ height: '60%' }}>Delete</div>
-                </button>
+              <button onClick={() => handleDelete(params.row.id)} style={{ border: 'none', background: 'transparent', margin: '1.2em -2em auto' }}>
+  <div className="deleteButton" style={{ height: '60%' }}>Delete</div>
+</button>
               </i>
             </ul>
 
@@ -126,15 +155,33 @@ const Datatable = () => {
 
 
     <div className='datatable' >
+       <div className="dataTableTitle">
+    Add New Client
+    <div className='espace'>
+      <th> <Link to="viewclient" 
+    style={{textDecoration:"none"}}
+    className='link'>
+    Add New 
+    </Link></th>
+      <th>
+      <Link to="/home" 
+    style={{textDecoration:"none"}}
+    className='link'>
+     Back
+    </Link>
+      </th>
+    </div>
+  </div>
       <div>
-        <input type='text' onChange={handleFilter} placeholder='Search' ></input>
+      <input type="text" onChange={handleFilter} placeholder="Search" />
+
       </div>
       <DataGrid className='datagrid'
         columns={Columns.concat(actionColumn)}
         rows={records}
         getRowId={(row) => row.id}
-        pageSize={7}
-        rowsPerPageOptions={[7]}
+        pageSize={30}
+        rowsPerPageOptions={[40]}
         checkboxSelection
         disableSelectionOnClick
 
